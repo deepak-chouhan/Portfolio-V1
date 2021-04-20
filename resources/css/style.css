@@ -1,0 +1,579 @@
+/* --------------------------------------------------------------- */
+/* Basic Setup */
+/* --------------------------------------------------------------- */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --navy: #0A192F;
+    --navyl: #112240;
+    --light: #fcfcfc;
+    --grey: #878a8f;
+}
+
+@font-face {
+    font-family: Calibre;
+    src: url("/resources/css/fonts/Calibre-Bold.woff2");
+}
+
+element.style {
+    display: block;
+}
+
+html,
+body {
+    background-color: white;
+    color: var(--navy);
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.5;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+
+}
+
+.clearfix {
+    zoom: 1
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* --------------------------------------------------------------- */
+/* preloader */
+/* --------------------------------------------------------------- */
+.preloadBox {
+    position: absolute;
+    background-color: #0A192F;
+    width: 100%;
+    height: 100vh;
+    z-index: 99999;
+    transition: opacity 1s ease;
+}
+
+.preload-Finish {
+    opacity: 0;
+    pointer-events: none;
+
+}
+
+.preloader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#dcdeepakdc {
+    stroke-dasharray: 180px;
+    stroke-dashoffset: 170px;
+    animation: fill 0.5s ease forwards 1s;
+}
+
+#dcdeepakdc path {
+    animation: line-anim 2s ease forwards;
+}
+
+@keyframes line-anim {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes fill {
+    from {
+        fill: transparent;
+    }
+
+    to {
+        fill: white;
+    }
+}
+
+/* --------------------------------------------------------------- */
+/* Paragraph */
+/* --------------------------------------------------------------- */
+h1 {
+    font-size: 400%;
+    font-weight: 900;
+    font-family: Calibre;
+    margin: 0;
+}
+
+h2 {
+    font-size: 200%;
+}
+
+/* --------------------------------------------------------------- */
+/* Buttons */
+/* --------------------------------------------------------------- */
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 12px 35px;
+    border-radius: 5px;
+}
+
+.btn-fill {
+    background-color: var(--navyl);
+    color: var(--light);
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.btn-fill:hover{
+    color: var(--navyl);
+    background-color: var(--grey);
+}
+
+/* --------------------------------------------------------------- */
+/* Reusable */
+/* --------------------------------------------------------------- */
+
+section {
+    padding: 80px 0;
+}
+
+.row {
+    max-width: 70vw;
+    margin: 0 auto;
+}
+
+.container {
+    width: 70vw;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+
+}
+
+/* --------------------------------------------------------------- */
+/* Social bar */
+/* --------------------------------------------------------------- */
+.Social_bar {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9999;
+}
+
+.list_ul {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+.list_ul::after {
+    content: "";
+    margin: 50px auto;
+    display: block;
+    width: 1.5px;
+    height: 50px;
+    background-color: var(--navyl);
+  }
+  .list_ul::before {
+    content: "";
+    margin: 50px auto;
+    display: block;
+    width: 1.5px;
+    height: 50px;
+    background-color: var(--navyl);
+  }
+
+.list_ul li {
+    padding: 15px 0;
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.list_ul li:hover {
+    transform: translate(0px, -5px);
+}
+.socialbar_icon {
+    width: 20px;
+    height: auto;
+    color: var(--navyl);
+}
+
+/* --------------------------------------------------------------- */
+/* Navbar */
+/* --------------------------------------------------------------- */
+header {
+    height: 100vh;
+}
+
+nav {
+    font-size: 80%;
+    font-weight: 400;
+    margin-top: 25px;
+}
+
+.email {
+    margin: auto;
+    float: left;
+    margin-left: 3%;
+}
+
+.email div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.blob {
+    background-image: url("/resources/img/Blob.svg");
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+}
+
+.blob img {
+    margin-top: 50%;
+    margin-left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.email div a {
+    text-decoration: none;
+    margin-left: 15px;
+    color: var(--navy);
+}
+
+.nav-links {
+    float: right;
+    margin-top: 18px;
+    margin-right: 3%;
+}
+
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    margin-left: 50px;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    color: var(--navy);
+}
+
+.nav-links li:nth-of-type(1) {
+    margin-left: 0;
+}
+
+/* Sticky Nav */
+
+
+/* ------------ */
+/* --------------------------------------------------------------- */
+/* Intro */
+/* --------------------------------------------------------------- */
+.intro {
+    position: absolute;
+    text-align: center;
+    width: 1240px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--navyl);
+}
+
+.intro p {
+    font-size: 80%;
+    font-weight: 300;
+    margin: -10px 0;
+    color: var(--grey);
+}
+
+.intro div a {
+    margin-top: 70px;
+}
+
+/* --------------------------------------------------------------- */
+/* ICON */
+/* --------------------------------------------------------------- */
+
+/* --------------------------------------------------------------- */
+/* Section about me */
+/* --------------------------------------------------------------- */
+.section-aboutMe {
+    text-align: center;
+    height: 100%;
+}
+
+.section-aboutMe h2 {
+    color: var(--navyl);
+    font-size: 200%;
+}
+
+.section-aboutMe p {
+    margin-top: 10px;
+    color: var(--grey);
+    text-align: justify;
+    font-size: 80%;
+    font-weight: 400;
+}
+
+.about-text {
+    text-align: left;
+    color: var(--grey);
+    margin-top: 15%;
+
+}
+
+.section-aboutMe img {
+    float: right;
+    width: 60%;
+    height: auto;
+}
+
+/* --------------------------------------------------------------- */
+/* Section resume */
+/* --------------------------------------------------------------- */
+.section-resume {}
+
+.section-resume p{
+    font-size: 80%;
+}
+
+.resume-grid{
+    width: 70vw;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 60px;
+}
+
+/* Education card */
+.education-card {}
+
+.education-card h3 {
+    font-size: 115%;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+.education-card p {
+    color: var(--grey);
+    font-size: 80%;
+    font-weight: 400;
+    margin-top: 15px;
+}
+
+.section-resume h2 {
+    margin-bottom: 50px;
+}
+
+.section-resume .row {
+    margin-bottom: 90px;
+}
+
+.section-resume li {
+    font-size: 80%;
+    font-weight: normal;
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.section-resume .container{
+    width: 60vw;
+}
+
+.resumeList {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+}
+
+.resumeList li::before {
+    content: "▸";
+    margin-right: 5px;
+}
+.skillstools div:first-of-type{
+    margin-bottom: 60px;
+}
+.resumecopy-btn{
+    margin-top: 300px;
+
+}
+
+/* --------------------------------------------------------------- */
+/* what i do */
+/* --------------------------------------------------------------- */
+.whatido {
+    margin: auto;
+}
+
+.whatido .container {
+    width: 70vw;
+    height: 35vh;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.whatido-card {
+    background-color: var(--navyl);
+    color: var(--light);
+    text-align: center;
+}
+
+.whatido-card svg {
+    width: 15%;
+    height: auto;
+}
+
+.whatido-card p {
+    font-size: 80%;
+    margin-top: 5%;
+}
+
+.whatido-card div {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* --------------------------------------------------------------- */
+/* Section project and personal project */
+/* --------------------------------------------------------------- */
+
+.project-card {
+    background-position: center;
+    background-size: cover;
+    display: inline-block;
+    text-align: left;
+    height: 90vh;
+    color: var(--light);
+}
+
+.project-card div {
+    margin-top: 10%;
+    margin-left: 10%;
+    margin-right: 20px;
+}
+
+.project-card p {
+    font-size: 80%;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.project-card p:last-of-type::after {
+    content: "→";
+    margin-left: 10px;
+}
+
+.project-card h1 {
+    font-size: 200%;
+}
+
+.Modelling {
+    background-image: linear-gradient(rgba(10, 25, 47, 0.3), rgba(10, 25, 47, 0.3)), url("/resources/css/img/AUDI\ RSQ-min.png");
+}
+
+.webdev {
+    background-image: linear-gradient(rgba(10, 25, 47, 0.1), rgba(10, 25, 47, 0.1)), url("/resources/css/img/UI.png");
+    background-position-y: -50px;
+}
+
+.gamedev {
+    background-image: linear-gradient(rgba(10, 25, 47, 0.6), rgba(10, 25, 47, 0.6)), url("/resources/css/img/game_dev.jpg");
+}
+
+.programming {
+    background-image: linear-gradient(rgba(10, 25, 47, 0.6), rgba(10, 25, 47, 0.6)), url("/resources/css/img/programming.jpg");
+}
+
+/* Personal project BG */
+.webdev-personal {
+    background-image: linear-gradient(rgba(10, 25, 47, 0.6), rgba(10, 25, 47, 0.6)), url("/resources/css/img/web_personal.jpg");
+}
+
+.programming-personal {
+    background-image: linear-gradient(rgba(10, 25, 47, 0.6), rgba(10, 25, 47, 0.6)), url("/resources/css/img/programming_personal.jpg");
+}
+
+.Modelling-personal {
+    background-image: linear-gradient(rgba(10, 25, 47, 0.2), rgba(10, 25, 47, 0.2)), url("/resources/css/img/modelling_personal.jpg");
+}
+
+
+/* --------------------------------------------------------------- */
+/* Section Instagram new */
+/* --------------------------------------------------------------- */
+.insta-card {
+    background-color: var(--navy);
+    background-position: center;
+    background-size: cover;
+    display: inline-block;
+    text-align: left;
+    height: 60vh;
+    color: var(--light);
+}
+
+.insta-card div {
+    margin-top: 10%;
+    margin-left: 10%;
+    margin-right: 20px;
+}
+
+.insta-card p {
+    font-size: 80%;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.insta-card h1 {
+    font-size: 200%;
+}
+.insta-card p:hover{
+
+}
+
+/* --------------------------------------------------------------- */
+/* Section contact */
+/* --------------------------------------------------------------- */
+.contact {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact p {
+    margin: 0 auto;
+    text-align: center;
+    width: 50%;
+    font-weight: 300;
+    color: var(--grey);
+}
+
+.contact .btn {
+    margin-top: 5%;
+}
+
+/* --------------------------------------------------------------- */
+/* Footer */
+/* --------------------------------------------------------------- */
+footer {
+    color: var(--grey);
+    text-align: center;
+    padding: 2% 0;
+    font-weight: 400;
+    font-size: 80%;
+}
+
+/* --------------------------------------------------------------- */
+/* Animation */
+/* --------------------------------------------------------------- */

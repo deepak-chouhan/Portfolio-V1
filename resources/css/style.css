@@ -160,7 +160,7 @@ section {
 /* --------------------------------------------------------------- */
 .Social_bar {
     position: fixed;
-    left: 20px;
+    left: 40px;
     top: 50%;
     transform: translateY(-50%);
     z-index: 9999;

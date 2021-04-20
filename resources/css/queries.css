@@ -22,6 +22,10 @@
         padding: 0;
     }
 
+    .container{
+        width: 80vw;
+    }
+
     section {
         padding: 60px 0;
     }
@@ -40,6 +44,7 @@
     .section-aboutMe img {
         width: 80%;
         height: auto;
+        text-align: left;
     }
 
     /* section-resume */
@@ -66,12 +71,11 @@
     /* section-what i do */
 
     .whatido .container {
-        width: 70vw;
+        width: 80vw;
         height: 21vh;
     }
 
     /* section-Projects */
-
     .project-card {
         height: 60vh;
     }
@@ -138,8 +142,7 @@
     .section-aboutMe img {
         width: 80%;
         height: auto;
-        float: none;
-    }
+    float: left;    }
 
     /* section-resume */
 
@@ -164,6 +167,21 @@
         margin-top: 100px;
     }
 
+    /* section-project */
+
+    .projects .container, .personal-projects .container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .project-card {
+        background-position: center;
+        background-size: cover;
+        display: inline-block;
+        text-align: left;
+        height: 80vh;
+        color: var(--light);
+    }
+
     /* section-what i do */
 
     .whatido .container {
@@ -177,40 +195,48 @@
 /* small phones: from 0 to 480px */
 @media only screen and (max-width: 480px) {
 
+    body{
+        font-size: 16px;
+    }
+    p{
+        font-size: 100%;
+    }
+
+    h1{
+        font-size: 300%;
+    }
 
     .row {
         max-width: 80vw;
         padding: 0;
     }
 
-    .contact-form {
+    .project-card {
+        background-position: center;
+        background-size: cover;
+        display: inline-block;
+        text-align: left;
+        height: 70vh;
+        color: var(--light);
+    }
+
+    .whatido .container{
+        width: 80vw;
+        height: 200vh;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .whatido p{
+        font-size: 110%;
+    }
+    .insta-new .container {
+        width: 80vw;
+        height: 100vh;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .contact p{
         width: 100%;
     }
-
-    .btn-app {
-        margin: auto;
+    .contact h1{
+        font-size: 250%;
     }
-
-    .btn-app {
-        margin-left: 40px;
-    }
-
-    footer {
-        padding: 5%;
-        text-align: center;
-    }
-
-    .footer-nav li,
-    .social-icons li {
-        display: inline-block;
-        margin-right: 10px;
-    }
-
-    .social-icons {
-        margin-top: 10%;
-        list-style: none;
-        float: none;
-        text-align: center;
-    }
-
 }

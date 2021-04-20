@@ -232,7 +232,7 @@ nav {
 }
 
 .blob {
-    background-image: url("/resources/img/Blob.svg");
+    background-image: url("../img/Blob.svg");
     display: inline-block;
     height: 50px;
     width: 50px;
@@ -481,33 +481,33 @@ nav {
 }
 
 .Modelling {
-    background-image: linear-gradient(rgba(10, 25, 47, 0.3), rgba(10, 25, 47, 0.3)), url("/resources/css/img/AUDI\ RSQ-min.png");
+    background-image: linear-gradient(rgba(10, 25, 47, 0.3), rgba(10, 25, 47, 0.3)), url("./img/AUDI\ RSQ-min.png");
 }
 
 .webdev {
-    background-image: linear-gradient(rgba(10, 25, 47, 0.1), rgba(10, 25, 47, 0.1)), url("/resources/css/img/UI.png");
+    background-image: linear-gradient(rgba(10, 25, 47, 0.1), rgba(10, 25, 47, 0.1)), url("./img/UI.png");
     background-position-y: -50px;
 }
 
 .gamedev {
-    background-image: linear-gradient(rgba(10, 25, 47, 0.6), rgba(10, 25, 47, 0.6)), url("/resources/css/img/game_dev.jpg");
+    background-image: linear-gradient(rgba(10, 25, 47, 0.6), rgba(10, 25, 47, 0.6)), url("./img/game_dev.jpg");
 }
 
 .programming {
-    background-image: linear-gradient(rgba(10, 25, 47, 0.6), rgba(10, 25, 47, 0.6)), url("/resources/css/img/programming.jpg");
+    background-image: linear-gradient(rgba(10, 25, 47, 0.6), rgba(10, 25, 47, 0.6)), url("./img/programming.jpg");
 }
 
 /* Personal project BG */
 .webdev-personal {
-    background-image: linear-gradient(rgba(10, 25, 47, 0.6), rgba(10, 25, 47, 0.6)), url("/resources/css/img/web_personal.jpg");
+    background-image: linear-gradient(rgba(10, 25, 47, 0.6), rgba(10, 25, 47, 0.6)), url("./img/web_personal.jpg");
 }
 
 .programming-personal {
-    background-image: linear-gradient(rgba(10, 25, 47, 0.6), rgba(10, 25, 47, 0.6)), url("/resources/css/img/programming_personal.jpg");
+    background-image: linear-gradient(rgba(10, 25, 47, 0.6), rgba(10, 25, 47, 0.6)), url("./img/programming_personal.jpg");
 }
 
 .Modelling-personal {
-    background-image: linear-gradient(rgba(10, 25, 47, 0.2), rgba(10, 25, 47, 0.2)), url("/resources/css/img/modelling_personal.jpg");
+    background-image: linear-gradient(rgba(10, 25, 47, 0.2), rgba(10, 25, 47, 0.2)), url("./img/modelling_personal.jpg");
 }
 
 

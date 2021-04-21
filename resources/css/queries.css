@@ -1,15 +1,5 @@
 /* big tablets to 1200px: from 768 to 1023px */
-@media only screen and (max-width: 1200px) {
-    .intro {
-        width: 100%;
-        padding: 0 2%;
-    }
-    .resumecopy-btn{
-        margin-top: 200px;
-    
-    }
-
-}
+@media only screen and (max-width: 1200px) {}
 
 /* small tablets to big tablets: from 768 to 1023px */
 @media only screen and (max-width: 1023px) {
@@ -17,80 +7,25 @@
         font-size: 18px;
     }
 
-    .row {
-        max-width: 80vw;
-        padding: 0;
+
+
+    .wrapper {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        gap: 60px;
     }
 
-    .container{
-        width: 80vw;
-    }
-
-    section {
-        padding: 60px 0;
-    }
-
-    .nav-links {
-        display: block;
-    }
-
-    /* section-aboutme */
-    .about-text {
-        text-align: left;
-        color: var(--grey);
-        margin-top: 10%;
-    }
-
-    .section-aboutMe img {
-        width: 80%;
-        height: auto;
-        text-align: left;
-    }
-
-    /* section-resume */
-    .resume-grid {
-        width: 80vw;
-    }
-
-    .section-resume .row {
-        margin-bottom: 90px;
-    }
-
-    .section-resume .container {
-        width: 80vw;
-    }
-
-    .resumecopy-btn {
-        margin-top: 200px;
-    }
-
-    .section-resume li {
-        font-size: 90%;
-    }
-
-    /* section-what i do */
-
-    .whatido .container {
-        width: 80vw;
-        height: 21vh;
-    }
-
-    /* section-Projects */
     .project-card {
-        height: 60vh;
+        text-decoration: none;
+        overflow: hidden;
+        /* width: 670px; */
+        height: 640px;
+        color: var(--light);
+        position: relative;
+        display: flex;
     }
-
-    /* section-insta_new */
-    .insta-card {
-        height: 45vh;
-    }
-
-    /* section-contact */
-    .contact p {
-        width: 60%;
-    }
-
-
 
 }
 
@@ -100,143 +35,125 @@
         font-size: 16px;
     }
 
-    .container {
-        width: 80vw;
-    }
-    .row {
-        max-width: 80vw;
-        padding: 0;
+    h1{
+        font-size: 300%;
     }
 
-    section {
-        padding: 60px 0;
+    nav{
+        display: none;
     }
 
-    .intro {
-        padding: 0 4%;
+    /* About-section */
+
+    .section-aboutMe {
+        width: 80%;
     }
 
-    .col {
-        width: 100%;
-        margin: 0 0 4% 0;
-    }
-
-    .intro p {
+    .section-aboutMe p {
         font-size: 100%;
-        width: 70%;
-        margin: 0 auto;
     }
 
-    /* section-aboutme */
-    .about-text {
-        text-align: left;
-        color: var(--grey);
-        margin-top: 10%;
-    }
-
-    .about-text p {
-        font-size: 90%;
-        margin-bottom: 10%;
+    .section-aboutMe .wrapper {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 60px;
     }
 
     .section-aboutMe img {
+        float: left;
         width: 80%;
         height: auto;
-    float: left;    }
+    }
 
-    /* section-resume */
-
-    .resume-grid {
-        width: 80vw;
-        margin: 0 auto;
+    .skills-list {
+        font-size: 100%;
         display: grid;
-        grid-template-columns: 100%;
-        gap: 0px;
+        grid-template-columns: repeat(2, minmax(140px, 200px));
+        padding: 0px;
+        margin: 20px 0px 0px;
+        overflow: hidden;
+        list-style: none;
     }
 
-    .section-resume .row {
-        margin-bottom: 90px;
-    }
-
-    .section-resume .container {
-        grid-template-columns: auto;
-
-    }
-
-    .resumecopy-btn {
-        margin-top: 100px;
-    }
-
-    /* section-project */
-
-    .projects .container, .personal-projects .container{
-        grid-template-columns: repeat(1, 1fr);
+    .wrapper {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        gap: 60px;
     }
 
     .project-card {
-        background-position: center;
-        background-size: cover;
-        display: inline-block;
-        text-align: left;
-        height: 80vh;
+        text-decoration: none;
+        overflow: hidden;
+        /* width: 670px; */
+        height: 440px;
         color: var(--light);
-    }
-
-    /* section-what i do */
-
-    .whatido .container {
-        width: 80vw;
-        height: 70vh;
-        grid-template-columns: repeat(2, 1fr);
+        position: relative;
+        display: flex;
+        padding: 20px;
     }
 
 }
 
 /* small phones: from 0 to 480px */
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 500px) {
 
-    body{
+    body {
         font-size: 16px;
     }
-    p{
+
+    /* About-section */
+
+    .section-aboutMe {
+        width: 80%;
+    }
+
+    .section-aboutMe p {
         font-size: 100%;
     }
 
-    h1{
-        font-size: 300%;
+    .section-aboutMe .wrapper {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 60px;
     }
 
-    .row {
-        max-width: 80vw;
-        padding: 0;
+    .section-aboutMe img {
+        float: left;
+        width: 100%;
+        height: auto;
+    }
+
+    .skills-list {
+        width: 100%;
+        font-size: 100%;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        list-style: none;
+    }
+
+    .wrapper {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 60px;
     }
 
     .project-card {
-        background-position: center;
-        background-size: cover;
-        display: inline-block;
-        text-align: left;
-        height: 70vh;
+        text-decoration: none;
+        overflow: hidden;
+        /* width: 670px; */
+        height: 540px;
         color: var(--light);
+        position: relative;
+        display: flex;
+        padding: 20px;
     }
 
-    .whatido .container{
-        width: 80vw;
-        height: 200vh;
-        grid-template-columns: repeat(1, 1fr);
-    }
-    .whatido p{
-        font-size: 110%;
-    }
-    .insta-new .container {
-        width: 80vw;
-        height: 100vh;
-        grid-template-columns: repeat(1, 1fr);
-    }
-    .contact p{
-        width: 100%;
-    }
-    .contact h1{
-        font-size: 250%;
-    }
 }

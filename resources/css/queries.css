@@ -7,7 +7,9 @@
         font-size: 18px;
     }
 
-
+    .Social_bar {
+        display: none;
+    }
 
     .wrapper {
         width: 100%;
@@ -35,20 +37,15 @@
         font-size: 16px;
     }
 
-    h1{
+    h1 {
         font-size: 300%;
     }
 
-    nav{
+    nav {
         display: none;
     }
 
     /* About-section */
-
-    .section-aboutMe {
-        width: 80%;
-    }
-
     .section-aboutMe p {
         font-size: 100%;
     }
@@ -77,12 +74,17 @@
         list-style: none;
     }
 
+    .projects h1,
+    .Personal-projects h1 {
+        margin-bottom: 20px;
+    }
+
     .wrapper {
         width: 100%;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto;
-        gap: 60px;
+        gap: 30px;
     }
 
     .project-card {
@@ -96,19 +98,37 @@
         padding: 20px;
     }
 
+    .contact h1 {
+        font-size: 300%;
+    }
+
+    .contact P {
+        width: 70%;
+    }
+
+
 }
 
 /* small phones: from 0 to 480px */
 @media only screen and (max-width: 500px) {
+    
+    section {
+        padding: 50px 0;
+    }
 
     body {
         font-size: 16px;
     }
 
+    .row {
+        width: 85vw;
+    }
+
     /* About-section */
 
-    .section-aboutMe {
-        width: 80%;
+    .section-aboutMe .row {
+        width: 85vw;
+
     }
 
     .section-aboutMe p {
@@ -137,12 +157,17 @@
         list-style: none;
     }
 
+    .projects h1,
+    .Personal-projects h1 {
+        margin-bottom: 20px;
+    }
+
     .wrapper {
         width: 100%;
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: auto;
-        gap: 60px;
+        gap: 30px;
     }
 
     .project-card {
@@ -154,6 +179,14 @@
         position: relative;
         display: flex;
         padding: 20px;
+    }
+
+    .contact h1 {
+        font-size: 250%;
+    }
+
+    .contact P {
+        width: 90%;
     }
 
 }

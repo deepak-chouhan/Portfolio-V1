@@ -7,6 +7,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 :root {
@@ -34,12 +35,10 @@ body {
     font-weight: 300;
     font-size: 20px;
     text-rendering: optimizeLegibility;
-    overflow-x: hidden;
     margin: 0 5px;
-
 }
 
-.clearfix {
+/* .clearfix {
     zoom: 1
 }
 
@@ -47,7 +46,7 @@ body {
     content: "";
     clear: both;
     display: table;
-}
+} */
 
 /* --------------------------------------------------------------- */
 /* Paragraph */
@@ -220,7 +219,7 @@ nav {
 .intro {
     position: absolute;
     text-align: center;
-    width: 1240px;
+    width: 100%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);

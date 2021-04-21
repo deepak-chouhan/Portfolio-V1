@@ -118,16 +118,17 @@
 
     body {
         font-size: 16px;
+        overflow: hidden;
     }
 
     .row {
-        width: 95vw;
+        width: 90vw;
     }
 
     /* About-section */
 
     .section-aboutMe .row {
-        width: 95vw;
+        width: 90vw;
     }
 
     .section-aboutMe p {

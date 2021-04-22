@@ -45,6 +45,26 @@
         display: none;
     }
 
+    /* What i do-section */
+    .whatido h1 {
+        margin-bottom: 20px;
+    }
+
+    .whatido .wrapper {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        gap: 30px;
+    }
+
+    .whatido-card {
+        background-color: var(--navyl);
+        color: var(--light);
+        text-align: center;
+        padding: 90px 0;
+    }
+
     /* About-section */
     .section-aboutMe p {
         font-size: 100%;
@@ -111,7 +131,7 @@
 
 /* small phones: from 0 to 480px */
 @media only screen and (max-width: 500px) {
-    
+
     section {
         padding: 50px 0;
     }
@@ -123,6 +143,27 @@
 
     .row {
         width: 90vw;
+    }
+
+    /* What i do-section */
+    .whatido h1 {
+        font-size: 250%;
+        margin-bottom: 20px;
+    }
+
+    .whatido .wrapper {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: auto;
+        gap: 20px;
+    }
+
+    .whatido-card {
+        background-color: var(--navyl);
+        color: var(--light);
+        text-align: center;
+        padding: 90px 0;
     }
 
     /* About-section */
@@ -160,6 +201,7 @@
     .projects h1,
     .Personal-projects h1 {
         margin-bottom: 20px;
+        font-size: 250%;
     }
 
     .wrapper {

@@ -260,10 +260,12 @@ nav {
     overflow: hidden;
     list-style: none;
 }
-.skills-list li{
+
+.skills-list li {
     margin-top: 10px;
 }
-.skills-list li::before{
+
+.skills-list li::before {
     content: "▸";
     margin-right: 10px;
 
@@ -296,13 +298,19 @@ nav {
     margin-bottom: 50px;
 }
 
+.whatido .wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    gap: 30px;
+}
+
 .whatido-card {
     background-color: var(--navyl);
     color: var(--light);
     text-align: center;
-    width: 250px;
-    height: 250px;
-    margin: 15px;
+    padding: 90px 0;
 }
 
 .whatido-card svg {
@@ -379,37 +387,6 @@ nav {
     font-size: 200%;
     margin: 0;
 }
-
-.Modelling {
-    background-image: linear-gradient(rgba(10, 25, 47, 0.3), rgba(10, 25, 47, 0.3)), url("./img/AUDI\ RSQ-min.png");
-}
-
-.webdev {
-    background-image: linear-gradient(rgba(10, 25, 47, 0.1), rgba(10, 25, 47, 0.1)), url("./img/UI.png");
-    background-position-y: -50px;
-}
-
-.gamedev {
-    background-image: linear-gradient(rgba(10, 25, 47, 0.6), rgba(10, 25, 47, 0.6)), url("./img/game_dev.jpg");
-}
-
-.programming {
-    background-image: linear-gradient(rgba(10, 25, 47, 0.6), rgba(10, 25, 47, 0.6)), url("./img/programming.jpg");
-}
-
-/* Personal project BG */
-.webdev-personal {
-    background-image: linear-gradient(rgba(10, 25, 47, 0.6), rgba(10, 25, 47, 0.6)), url("./img/web_personal.jpg");
-}
-
-.programming-personal {
-    background-image: linear-gradient(rgba(10, 25, 47, 0.6), rgba(10, 25, 47, 0.6)), url("./img/programming_personal.jpg");
-}
-
-.Modelling-personal {
-    background-image: linear-gradient(rgba(10, 25, 47, 0.2), rgba(10, 25, 47, 0.2)), url("./img/modelling_personal.jpg");
-}
-
 
 /* --------------------------------------------------------------- */
 /* Section contact */

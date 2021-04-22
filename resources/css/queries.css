@@ -96,7 +96,8 @@
 
     .projects h1,
     .Personal-projects h1 {
-        margin-bottom: 20px;
+        line-height: 100%;
+        margin-bottom: 0;
     }
 
     .wrapper {
@@ -200,8 +201,14 @@
 
     .projects h1,
     .Personal-projects h1 {
-        margin-bottom: 20px;
+        line-height: 100%;
+        margin-bottom: 0;
         font-size: 250%;
+    }
+
+    .projects p,
+    .Personal-projects p {
+        font-size: 100%;
     }
 
     .wrapper {

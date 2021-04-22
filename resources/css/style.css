@@ -335,6 +335,7 @@ nav {
 /* --------------------------------------------------------------- */
 .projects h1,
 .Personal-projects h1 {
+    line-height: 110%;
     margin-bottom: 50px;
 }
 

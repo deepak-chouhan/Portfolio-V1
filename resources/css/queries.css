@@ -96,7 +96,6 @@
 
     .projects h1,
     .Personal-projects h1 {
-        line-height: 100%;
         margin-bottom: 10px;
     }
 
@@ -201,7 +200,6 @@
 
     .projects h1,
     .Personal-projects h1 {
-        line-height: 100%;
         margin-bottom: 10px;
         font-size: 250%;
     }

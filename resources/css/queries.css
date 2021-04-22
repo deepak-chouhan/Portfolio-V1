@@ -97,6 +97,7 @@
     .projects h1,
     .Personal-projects h1 {
         margin-bottom: 10px;
+        font-size: 220%;
     }
 
     .wrapper {
@@ -201,7 +202,7 @@
     .projects h1,
     .Personal-projects h1 {
         margin-bottom: 10px;
-        font-size: 250%;
+        font-size: 200%;
     }
 
     .projects p,

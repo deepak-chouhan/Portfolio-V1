@@ -41,16 +41,15 @@
         font-size: 300%;
     }
 
-    .intro h1{
+    .intro h1 {
         font-size: 400%;
     }
 
-    .intro p{
+    .intro p {
         font-size: 100%;
         width: 80%;
         margin: 0 auto;
     }
-
 
     /* What i do-section */
     .whatido h1 {
@@ -153,11 +152,15 @@
         width: 90vw;
     }
 
-    .intro h1{
+    #desktopnav{
+        display: none;
+    }
+
+    .intro h1 {
         font-size: 300%;
     }
 
-    .intro p{
+    .intro p {
         font-size: 100%;
         width: 80%;
         margin: 0 auto;

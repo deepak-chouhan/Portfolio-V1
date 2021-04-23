@@ -16,6 +16,7 @@
     --light: #fcfcfc;
     --grey: #878a8f;
     --neon: #00d1ff;
+    --navytransp: rgba(10, 25, 47, 0.95);
     --trans1: cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
@@ -37,7 +38,12 @@ body {
     font-weight: 300;
     font-size: 20px;
     text-rendering: optimizeLegibility;
+
+}
+
+.mainbody {
     margin: 0 5px;
+    padding: 0px;
 }
 
 .clearfix {
@@ -114,7 +120,7 @@ section {
     top: 50%;
     transform: translateY(-50%);
     z-index: 9999;
-    
+
 }
 
 .Social_bar li:hover svg {
@@ -131,7 +137,7 @@ section {
     list-style: none;
 }
 
-.list_ul::after {
+.socialbar_icon .list_ul::after {
     content: "";
     margin: 50px auto;
     display: block;
@@ -140,7 +146,7 @@ section {
     background-color: var(--navyl);
 }
 
-.list_ul::before {
+.socialbar_icon .list_ul::before {
     content: "";
     margin: 50px auto;
     display: block;
@@ -164,9 +170,36 @@ section {
     color: var(--navyl);
 }
 
+.navSocial_bar {
+    margin-top: 100px;
+}
+
+.navSocial_bar .list_ul {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+.navSocial_bar .list_ul li{
+    margin: 0;
+    padding: 15px 0;
+}
+
+.navSocial_bar .socialbar_icon {
+    color: var(--light);
+}
+.navSocial_bar ul li:hover svg {
+    color: var(--neon);
+}
+
 /* --------------------------------------------------------------- */
 /* Navbar */
 /* --------------------------------------------------------------- */
+nav {}
+
 header {
     height: 100vh;
 }
@@ -174,16 +207,64 @@ header {
 nav {
     font-size: 80%;
     font-weight: 400;
-    margin-top: 25px;
+}
+
+#mobilenavbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 5;
+    width: 0px;
+    height: 100vh;
+    text-align: center;
+    background-color: var(--navytransp);
+    backdrop-filter: blur(10px);
+    transition: all 0.4s var(--trans1);
+}
+
+.mobilenavbar-ul li {
+    margin-top: 50px;
+}
+
+.mobilenavbar-ul li a {
+    font-size: 100%;
+    color: var(--light);
+    text-decoration: none;
+    transition: all 0.1s var(--trans1);
+}
+
+#mobilenavbar ul li:hover a {
+    color: var(--neon);
+}
+
+#mobilenavicon {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    z-index: 9;
+    cursor: pointer;
+}
+
+#mobilenavicon svg {
+    fill: var(--navyl);
+    transition: all 0.1s var(--trans1);
+}
+
+#mobilenavicon:hover svg {
+    fill: var(--neon);
+}
+
+#desktopnav {
+    overflow: hidden;
+    padding: 10px 0;
 }
 
 .email {
     margin: auto;
     float: left;
     margin-left: 3%;
-    /* margin-top: 18px; */
-    
-    
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .email div {
@@ -198,7 +279,8 @@ nav {
     width: 50px;
     overflow: hidden;
 }
-#Email_icon{
+
+#Email_icon {
     fill: var(--light);
 }
 
@@ -217,9 +299,9 @@ nav {
 
 .nav-links {
     float: right;
-    margin-top: 18px;
+    margin-top: 16px;
     margin-right: 3%;
-    
+
 }
 
 .nav-links ul li {
@@ -237,10 +319,11 @@ nav {
     margin-left: 0;
 }
 
-.email:hover a{
+.email:hover a {
     color: var(--neon);
 }
-.email:hover #Email_icon{
+
+.email:hover #Email_icon {
     fill: var(--neon);
 }
 
@@ -353,7 +436,7 @@ nav {
     text-align: center;
     padding: 90px 0;
     overflow: hidden;
-   
+
 }
 
 .whatido-card svg {
@@ -374,7 +457,7 @@ nav {
     transition: all 0.3s var(--trans1);
 }
 
-.whatido-card:hover{
+.whatido-card:hover {
     color: var(--neon);
 }
 

@@ -41,9 +41,16 @@
         font-size: 300%;
     }
 
-    nav {
-        display: none;
+    .intro h1{
+        font-size: 400%;
     }
+
+    .intro p{
+        font-size: 100%;
+        width: 80%;
+        margin: 0 auto;
+    }
+
 
     /* What i do-section */
     .whatido h1 {
@@ -144,6 +151,16 @@
 
     .row {
         width: 90vw;
+    }
+
+    .intro h1{
+        font-size: 300%;
+    }
+
+    .intro p{
+        font-size: 100%;
+        width: 80%;
+        margin: 0 auto;
     }
 
     /* What i do-section */

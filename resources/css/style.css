@@ -15,6 +15,8 @@
     --navyl: #112240;
     --light: #fcfcfc;
     --grey: #878a8f;
+    --neon: #00d1ff;
+    --trans1: cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 @font-face {
@@ -28,7 +30,7 @@ element.style {
 
 html,
 body {
-    background-color: white;
+    background-color: var(--light);
     color: var(--navy);
     font-family: 'Open Sans', sans-serif;
     line-height: 1.5;
@@ -38,7 +40,7 @@ body {
     margin: 0 5px;
 }
 
-/* .clearfix {
+.clearfix {
     zoom: 1
 }
 
@@ -46,7 +48,7 @@ body {
     content: "";
     clear: both;
     display: table;
-} */
+}
 
 /* --------------------------------------------------------------- */
 /* Paragraph */
@@ -68,14 +70,26 @@ h2 {
 .btn {
     display: inline-block;
     text-decoration: none;
-    padding: 12px 35px;
+    padding: 10px 30px;
     border-radius: 5px;
 }
 
 .btn-fill {
     background-color: var(--navyl);
     color: var(--light);
-    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 0.25s var(--trans1);
+}
+
+.btn-ghost {
+    color: var(--navyl);
+    border: 1.5px solid var(--navyl);
+    font-weight: 300;
+    transition: all 0.3s var(--trans1);
+}
+
+.btn-ghost:hover {
+    color: var(--light);
+    background-color: var(--navyl);
 }
 
 /* --------------------------------------------------------------- */
@@ -100,6 +114,11 @@ section {
     top: 50%;
     transform: translateY(-50%);
     z-index: 9999;
+    
+}
+
+.Social_bar li:hover svg {
+    color: var(--neon);
 }
 
 .list_ul {
@@ -132,7 +151,7 @@ section {
 
 .list_ul li {
     padding: 15px 0;
-    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 0.25s var(--trans1);
 }
 
 .list_ul li:hover {
@@ -162,6 +181,9 @@ nav {
     margin: auto;
     float: left;
     margin-left: 3%;
+    /* margin-top: 18px; */
+    
+    
 }
 
 .email div {
@@ -174,6 +196,10 @@ nav {
     display: inline-block;
     height: 50px;
     width: 50px;
+    overflow: hidden;
+}
+#Email_icon{
+    fill: var(--light);
 }
 
 .blob img {
@@ -188,10 +214,12 @@ nav {
     color: var(--navy);
 }
 
+
 .nav-links {
     float: right;
     margin-top: 18px;
     margin-right: 3%;
+    
 }
 
 .nav-links ul li {
@@ -208,6 +236,19 @@ nav {
 .nav-links li:nth-of-type(1) {
     margin-left: 0;
 }
+
+.email:hover a{
+    color: var(--neon);
+}
+.email:hover #Email_icon{
+    fill: var(--neon);
+}
+
+
+.nav-links li:hover a {
+    color: var(--neon);
+}
+
 
 /* Sticky Nav */
 
@@ -311,6 +352,8 @@ nav {
     color: var(--light);
     text-align: center;
     padding: 90px 0;
+    overflow: hidden;
+   
 }
 
 .whatido-card svg {
@@ -328,6 +371,11 @@ nav {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    transition: all 0.3s var(--trans1);
+}
+
+.whatido-card:hover{
+    color: var(--neon);
 }
 
 /* --------------------------------------------------------------- */
@@ -364,12 +412,27 @@ nav {
     position: absolute;
     top: 0;
     left: 0;
+    transition: .3s ease;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.1;
+    transition: .3s ease;
+    background-color: var(--navy);
 }
 
 .info {
     position: relative;
     z-index: 3;
-
+    opacity: 0.7;
+    transition: .3s ease;
 }
 
 .project-card p {
@@ -388,6 +451,19 @@ nav {
     margin: 0;
 }
 
+.project-card:hover .overlay {
+    opacity: .9;
+}
+
+.project-card:hover .info {
+    opacity: 1;
+}
+
+.project-card:hover .image-zoom img {
+    transform: scale(1.02);
+}
+
+
 /* --------------------------------------------------------------- */
 /* Section contact */
 /* --------------------------------------------------------------- */
@@ -397,6 +473,7 @@ nav {
 }
 
 .contact p {
+    font-size: 80%;
     margin: 0 auto;
     text-align: center;
     width: 50%;

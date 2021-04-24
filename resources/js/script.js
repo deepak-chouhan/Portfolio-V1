@@ -27,7 +27,7 @@ $(document).ready(function () {
     $(".js-section-aboutme").waypoint(function (direction) {
 
         if (direction == "down") {
-            $("nav").css('box-shadow', '0px 4px 20px rgba(10, 25, 47, 0.1)');
+            $("nav").css('box-shadow', '0px 4px 20px rgba(10, 25, 47, 0.2)');
         } else {
             $("nav").css('box-shadow', 'none');
         }

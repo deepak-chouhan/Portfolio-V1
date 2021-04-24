@@ -260,8 +260,8 @@ nav {
 }
 
 #mobilenavicon {
-    position: absolute;
-    top: 30px;
+    position: fixed;
+    top: 28px;
     right: 30px;
     z-index: 9;
     cursor: pointer;

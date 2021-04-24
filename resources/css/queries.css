@@ -169,10 +169,14 @@
     .row {
         width: 90vw;
     }
-
     #desktopnav{
+        height: 70px;
+    }
+
+    .email{
         display: none;
     }
+
 
     .intro h1 {
         font-size: 300%;

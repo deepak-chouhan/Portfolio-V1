@@ -22,7 +22,6 @@ $(document).ready(function () {
     navblur.style.opacity = "0"
     navblur.style.pointerEvents = "none"
 
-
     // Sticky navbar
     $(".js-section-intro").waypoint(function (direction) {
 
@@ -62,5 +61,34 @@ $(document).ready(function () {
         }
     });
 
+    // Animate on scroll
+
+    $(".js--wp-2").waypoint(function (direction) {
+
+        $(".js--wp-2").addClass("animate__animated animate__fadeIn");
+    }, {
+        offset: "50%"
+    });
+
+    $(".js--wp-3").waypoint(function (direction) {
+
+        $(".js--wp-3").addClass("animate__animated animate__fadeIn");
+    }, {
+        offset: "50%"
+    });
+
+    $(".js--wp-4").waypoint(function (direction) {
+
+        $(".js--wp-4").addClass("animate__animated animate__fadeIn");
+    }, {
+        offset: "50%"
+    });
+
+    $(".js--wp-5").waypoint(function (direction) {
+
+        $(".js--wp-5").addClass("animate__animated animate__fadeIn");
+    }, {
+        offset: "50%"
+    });
 
 });

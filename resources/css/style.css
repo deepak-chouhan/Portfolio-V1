@@ -11,6 +11,7 @@
 }
 
 :root {
+    --bg: #fcfcfc;
     --navy: #0A192F;
     --navyl: #112240;
     --light: #fcfcfc;
@@ -18,7 +19,10 @@
     --neon: #00d1ff;
     --navytransp: rgba(10, 25, 47, 0.95);
     --trans1: cubic-bezier(0.645, 0.045, 0.355, 1);
+    --navbg: #fcfcfcab;
 }
+
+
 
 @font-face {
     font-family: Calibre;
@@ -31,7 +35,7 @@ element.style {
 
 html,
 body {
-    background-color: var(--light);
+    background-color: var(--bg);
     color: var(--navy);
     font-family: 'Open Sans', sans-serif;
     line-height: 1.5;
@@ -220,7 +224,7 @@ nav {
     font-weight: 400;
     width: 100vw;
     position: fixed;
-    background-color: #fcfcfcab;
+    background-color: var(--navbg);
     z-index: 4;
     transition: all 0.3s var(--trans1);
 }
@@ -468,7 +472,7 @@ nav {
 }
 
 .whatido-card {
-    background-color: var(--navyl);
+    background-color: #112240;
     color: var(--light);
     text-align: center;
     padding: 90px 0;
@@ -545,7 +549,7 @@ nav {
     width: 100%;
     opacity: 0.1;
     transition: .3s ease;
-    background-color: var(--navy);
+    background-color: #0A192F;
 }
 
 .info {
@@ -649,6 +653,6 @@ footer p::after {
 .js--wp-3,
 .js--wp-4,
 .js--wp-5,
-.js--wp-6{
+.js--wp-6 {
     opacity: 0;
 }

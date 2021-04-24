@@ -88,7 +88,7 @@ $(document).ready(function () {
 
         $(".js--wp-5").addClass("animate__animated animate__fadeIn");
     }, {
-        offset: "50%"
+        offset: "60%"
     });
 
 });

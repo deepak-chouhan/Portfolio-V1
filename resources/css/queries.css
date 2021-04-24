@@ -41,6 +41,10 @@
         font-size: 300%;
     }
 
+    nav{
+        font-size: 100%;
+    }
+
     .intro h1 {
         font-size: 400%;
     }
@@ -132,6 +136,20 @@
     .contact P {
         width: 70%;
     }
+
+    footer {
+        padding: 3% 0;
+        font-size: 80%;
+    }
+
+    footer p::before {
+        content: none;
+    }
+    footer p::after {
+        content: none;
+    }
+
+
 
 
 }

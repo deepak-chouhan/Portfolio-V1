@@ -235,7 +235,7 @@ nav {
     height: 100vh;
     background-color: var(--navytransp);
     backdrop-filter: blur(10px);
-    transition: all 0.2s var(--trans1);
+    transition: all 0.3s ease;
 }
 
 .mobilenavbar-ul {
@@ -362,11 +362,6 @@ nav {
 .email:hover a {
     color: var(--neon);
 }
-
-.email:hover #Email_icon {
-    fill: var(--neon);
-}
-
 
 .nav-links li:hover a {
     color: var(--neon);
@@ -654,11 +649,6 @@ footer p::after {
 .js--wp-3,
 .js--wp-4,
 .js--wp-5,
-.js--wp-6,
-.js--wp-7,
-.js--wp-8,
-.js--wp-9,
-.js--wp-10,
-.js--wp-11{
+.js--wp-6{
     opacity: 0;
 }

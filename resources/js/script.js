@@ -24,7 +24,7 @@ $(document).ready(function () {
 
 
     // Sticky navbar
-    $(".js-section-aboutme").waypoint(function (direction) {
+    $(".js-section-intro").waypoint(function (direction) {
 
         if (direction == "down") {
             $("nav").css('box-shadow', '0px 4px 20px rgba(10, 25, 47, 0.2)');
@@ -33,7 +33,7 @@ $(document).ready(function () {
         }
 
     }, {
-        offset: "80px;"
+        offset: "200px;"
     })
 
     $(mobilenavicon).click(function () {

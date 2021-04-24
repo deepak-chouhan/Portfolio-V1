@@ -305,7 +305,6 @@ nav {
 }
 
 .email div {
-    display: inline-block;
     vertical-align: middle;
 }
 
@@ -315,6 +314,10 @@ nav {
     height: 50px;
     width: 50px;
     overflow: hidden;
+}
+
+.link{
+    display: inline-block;
 }
 
 #Email_icon {

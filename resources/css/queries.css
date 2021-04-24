@@ -1,3 +1,13 @@
+:root {
+    --navy: #0A192F;
+    --navyl: #112240;
+    --light: #fcfcfc;
+    --grey: #878a8f;
+    --neon: #00d1ff;
+    --navytransp: rgba(10, 25, 47, 0.95);
+    --trans1: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
 /* big tablets to 1200px: from 768 to 1023px */
 @media only screen and (max-width: 1200px) {}
 
@@ -173,8 +183,31 @@
         height: 70px;
     }
 
-    .email{
+
+    .blob{
         display: none;
+    }
+    .email{
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0px;
+    }
+    .email div a{
+        margin: 0px;
+    }
+    .email a::before{
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        height: 1.5px;
+        width: 20px;
+        margin-right: 5px;
+        background-color: var(--navyl);
+    }
+
+    .email a:hover::before{
+        background-color: var(--neon);
     }
 
 

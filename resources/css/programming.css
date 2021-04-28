@@ -249,6 +249,7 @@ nav {
 .mobilenavbar-ul li {
     margin-top: 50px;
     font-size: 100%;
+    list-style: none;
 }
 
 .mobilenavbar-ul li a {
@@ -256,6 +257,7 @@ nav {
     color: var(--light);
     text-decoration: none;
     transition: all 0.1s var(--trans1);
+    
 }
 
 #mobilenavbar ul li:hover a {

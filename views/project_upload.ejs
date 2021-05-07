@@ -1,46 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        input {
+            display: block;
+            margin: 5px 0;
+        }
+
+        a {
+            display: inline-block;
+            border: 2px solid grey;
+            padding: 3px;
+            margin-top: 10px;
+        }
+    </style>
 </head>
+
 <body>
-    
-    <form action="POST" class="contact-form">
+
+    <form accept="/" action="/uploadproject" method="POST" class="contact-form">
         <div class="row">
-            <p>Personal or professional</p>
+            <p>Project Type</p>
             <select name="project_type" id="">
-                <option value="Personal">Personal</option>
-                <option value="Professional">Professional</option>
-            </select>
-        </div>
-        <div class="row">
-            <p>Project type</p>
-            <select name="project_type" id="">
-                <option value="programming">programming</option>
-                <option value="3D">3D</option>
-                <option value="webdev">webdev</option>
+                <option value="programmingandwebdev">programmingandwebdev</option>
+                <option value="modelling">modelling</option>
+                <option value="uxui">uxui</option>
                 <option value="gamedev">gamedev</option>
+                <option value="programmingandwebdev_personal">programmingandwebdev_personal</option>
+                <option value="modelling_personal">modelling_personal</option>
+                <option value="uxui_personal">uxui_personal</option>
             </select>
         </div>
         <div class="row">
             <p>Project title</p>
-            <input placeholder="Project title" type="text" name="project_title" id="">
+            <input placeholder="Project title" type="text" name="project_title" id="" autocomplete="off">
         </div>
         <div class="row">
             <p>Year</p>
             <input placeholder="Project Year" type="number" name="project_year" id="">
         </div>
         <div class="row">
-            <p>Project description</p>
-            <textarea placeholder="Write your message here" name="project_description" id="" cols="50" rows="10"></textarea>
+            <p>Project Link</p>
+            <input placeholder="Project link" type="text" name="project_link" id="" autocomplete="off">
         </div>
         <div class="row">
+            <p>Project description</p>
+            <textarea placeholder="Write your message here" name="project_description" id="" cols="50"
+                rows="10"></textarea>
+        </div>
+        <div class="row">
+            <p>Images cover</p>
+            <div>
+                <input placeholder="Image cover" type="text" name="image_cover" id="" autocomplete="off">
+            </div>
+        </div>
+        <div class="row">
+            <p>Images link</p>
+            <div id="Image_field">
+                <input placeholder="Image link" type="text" name="image_link" id="" autocomplete="off">
+            </div>
+
+            <a id="add_images">Add image</a>
+        </div>
+        <div class="row">
+            <p>Tools</p>
+            <div id="Tools_field">
+                <input placeholder="Tools" type="text" name="tools" id="" autocomplete="off">
+            </div>
+
+            <a id="add_tools">Add tools</a>
+        </div>
+        <div class="row">
+            <br>
+            <br>
+            <br>
             <input type="submit">
         </div>
     </form>
 
+    <script>
+        var image_field = document.getElementById("Image_field");
+        var tools_field = document.getElementById("Tools_field");
+        var add_images = document.getElementById("add_images");
+        var add_tools = document.getElementById("add_tools");
+
+        add_images.onclick = function () {
+            var newField = document.createElement("input");
+            newField.setAttribute("type", "text");
+            newField.setAttribute("name", "image_link");
+            newField.setAttribute("placeholder", "Image link");
+            image_field.appendChild(newField);
+        }
+
+        add_tools.onclick = function () {
+            var newField = document.createElement("input");
+            newField.setAttribute("type", "text");
+            newField.setAttribute("name", "tools");
+            newField.setAttribute("placeholder", "Tools");
+            tools_field.appendChild(newField);
+        }
+    </script>
+
 </body>
+
 </html>

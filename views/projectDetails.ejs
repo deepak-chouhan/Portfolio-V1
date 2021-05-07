@@ -4,11 +4,12 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <link rel="stylesheet" href="vendors/css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="vendors/css/grid.css">
+    <link rel="stylesheet" href="/vendors/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/vendors/css/grid.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="resources/css/projectdetails.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link rel="stylesheet" type="text/css" href="/resources/css/projectdetails.css">
+
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap"
@@ -51,9 +52,9 @@
                 </div>
                 <section id="mobilenavbar">
                     <ul class="mobilenavbar-ul">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a class="work-link" href="#work">Work</a></li>
-                        <li><a class="contact-link" href="#contact">Contact</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a class="work-link" href="/">Work</a></li>
+                        <li><a class="contact-link" href="/contact">Contact</a></li>
                         <li><a href="#">Resume</a></li>
                     </ul>
                     <div class="navSocial_bar">
@@ -118,17 +119,9 @@
 
         <div class="row">
             <div class="intro">
-                <p>2020</p>
-                <h1>3D Modelling and animation</h1>
-                <p>There are many variations of passages of Lorem Ipsum available, but the majority have 
-                    suffered alteration in some form, by injected humour, or randomised words which don't 
-                    look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need 
-                    to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem 
-                    Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making 
-                    this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, 
-                    combined with a handful of model sentence structures, to generate Lorem Ipsum which 
-                    looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, 
-                    injected humour, or non-characteristic words etc.</p>
+                <p><%= Project.year %> </p>
+                <h1><%= Project.title %></h1>
+                <p><%= Project.desc %></p>
             </div>
         </div>
     </header>
@@ -136,7 +129,7 @@
     <section class="mainbody">
 
         <!-- socialbar_icon Social bar -->
-        <!-- Whoever is inspecting this page to know how i made this floating bar, i want to let you know that this social bar in ispired from a different porfolio https://brittanychiang.com/ -->
+        <!-- Whoever is inspecting this page to know how i made this floating bar, i want to let you know that this social bar in iNspired from a different porfolio https://brittanychiang.com/ -->
         <div class="Social_bar js--wp-1">
             <ul class="list_ul">
                 <li>
@@ -195,13 +188,11 @@
         <section id="work" class="project js-section-intro">
             <div class="row js--wp-3">
                 <div class="wrapper">
-                    <img src="resources/img/dummy_img/img (1).jpg" alt="">
-                    <img src="resources/img/dummy_img/img (2).jpg" alt="">
-                    <img src="resources/img/dummy_img/img (3).jpg" alt="">
-                    <img src="resources/img/dummy_img/img (4).jpg" alt="">
-                    <img src="resources/img/dummy_img/img (5).jpg" alt="">
-                    <img src="resources/img/dummy_img/img (6).jpg" alt="">
-                    <img src="resources/img/dummy_img/img (7).jpg" alt="">
+
+                    <% Project.images.forEach(function(image){ %>
+                    <img src="<%= image %> " alt="">
+                    <% }) %>
+
                 </div>
             </div>
         </section>
@@ -209,11 +200,12 @@
         <footer>
             <p>Designed and developed with <span>&#x2764</span> by Deepak chouhan</p>
         </footer>
+
     </section>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="vendors/js/jquery.waypoints.min.js"></script>
-    <script src="resources/js/script.js"></script>
+    <script src="/vendors/js/jquery.waypoints.min.js"></script>
+    <script src="/resources/js/script.js"></script>
 </body>
 
 </html>

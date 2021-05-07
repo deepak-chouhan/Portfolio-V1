@@ -4,9 +4,11 @@ const mongoose = require("mongoose");
 
 const app = express();
 
-app.set ("view engine", "ejs");
+app.set("view engine", "ejs");
 
-app.use(bodyparser.urlencoded({extended:true}));
+app.use(bodyparser.urlencoded({
+    extended: true
+}));
 app.use(express.static("public"));
 
 mongoose.connect("mongodb://localhost:27017/PortfolioV1", {
@@ -14,21 +16,139 @@ mongoose.connect("mongodb://localhost:27017/PortfolioV1", {
     useUnifiedTopology: true
 });
 
-app.get("/", function(req, res){
+
+
+const projectSchema = {
+    type: String,
+    title: String,
+    year: Number,
+    link: String,
+    desc: String,
+    cover: String,
+    images: [],
+    tools: []
+}
+const PROJECT = mongoose.model("project", projectSchema);
+
+
+
+app.get("/", function (req, res) {
 
     res.render("index");
 })
 
-app.get("/uploadproject", function(req, res){
+app.get("/uploadproject", function (req, res) {
 
     res.render("project_upload")
 })
 
+app.get("/projects/:projecttype", function (req, res) {
 
-app.post("/uploadproject", function(req, res){
-    var item = req.body;
-    console.log(body);
+    const projecttype = req.params.projecttype
+
+    if (projecttype === "programmingandwebdev") {
+        PROJECT.find({
+            type: "programmingandwebdev"
+        }, function (err, foundprojects) {
+            if (foundprojects.length == 0) {
+                console.log("No items found")
+                res.redirect("/")
+            } else {
+
+                res.render("programming", {
+                    Projects: foundprojects
+                })
+            }
+        })
+    } else if (projecttype === "programmingandwebdev_personal") {
+        PROJECT.find({
+            type: "programmingandwebdev_personal"
+        }, function (err, foundprojects) {
+            if (foundprojects.length == 0) {
+                console.log("No items found")
+                res.redirect("/")
+            } else {
+
+                res.render("programming", {
+                    Projects: foundprojects
+                })
+            }
+        })
+    } else {
+        PROJECT.find({
+            type: projecttype
+        }, function (err, foundprojects) {
+            if (foundprojects.length == 0) {
+                console.log("No items found");
+                res.redirect("/")
+            } else {
+                if (projecttype === "modelling_personal" || projecttype === "modelling")
+                    res.render("projects", {
+                        title: "3D Modelling and animation",
+                        paragraph: "All of my 3D Modelling and Animation project are displayed here",
+                        Projects: foundprojects
+                    })
+                else if (projecttype === "uxui" || projecttype === "uxui_personal")
+                    res.render("projects", {
+                        title: "UX/UI Design",
+                        paragraph: "All of my UX/UI design project are displayed here",
+                        Projects: foundprojects
+                    })
+                else if (projecttype === "gamedev")
+                    res.render("projects", {
+                        title: "Game Development",
+                        paragraph: "All of my Game development project are displayed here",
+                        Projects: foundprojects
+                    })
+            }
+        })
+    }
+
 })
+
+app.get("/details/:projectid", function (req, res) {
+
+    const requestedproject = req.params.projectid
+
+
+    PROJECT.findOne({
+        _id: requestedproject
+    }, function (err, foundprojects) {
+
+        if (foundprojects) {
+            res.render("projectDetails", {
+                Project: foundprojects
+            })
+        }
+
+    })
+
+
+})
+
+app.get("/contact", function (req, res) {
+
+    res.render("contact");
+
+})
+
+app.post("/uploadproject", function (req, res) {
+    var newobject = req.body;
+    console.log(newobject);
+    const newproject = new PROJECT({
+        type: newobject.project_type,
+        title: newobject.project_title,
+        year: newobject.project_year,
+        link: newobject.project_link,
+        desc: newobject.project_description,
+        cover: newobject.image_cover,
+        images: newobject.image_link,
+        tools: newobject.tools
+    })
+    newproject.save();
+    res.redirect("/uploadproject")
+})
+
 
 
 app.listen(3000, function () {

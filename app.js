@@ -30,6 +30,14 @@ const projectSchema = {
 }
 const PROJECT = mongoose.model("project", projectSchema);
 
+const clientSchema = {
+    name: String,
+    email: String,
+    message: String,
+    date: String
+}
+
+const CLIENT = mongoose.model("client", clientSchema);
 
 
 app.get("/", function (req, res) {
@@ -129,6 +137,54 @@ app.get("/details/:projectid", function (req, res) {
 app.get("/contact", function (req, res) {
 
     res.render("contact");
+
+})
+
+app.get("/clients", function (req, res) {
+
+    CLIENT.find({}, function(err, foundClients){
+        if(!err && foundClients.length >= 0){
+
+            res.render("clients", {
+                clients: foundClients
+            })
+
+        }
+    })
+
+})
+
+app.get("/dashboard", function(req, res){
+
+    CLIENT.find({}, function(err, foundClients){
+        if(!err){
+            res.render("dashboard",{
+                clients: foundClients
+            });
+        }
+    })
+
+    
+})
+
+
+
+app.post("/contact", function (req, res) {
+
+    var date = new Date();
+
+
+    const client = req.body;
+
+    const newclient = CLIENT({
+        name: client.client_name,
+        email: client.client_email,
+        message: client.client_mssg,
+        date: date
+    })
+
+    newclient.save();
+    res.redirect("/contact");
 
 })
 

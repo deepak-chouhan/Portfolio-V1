@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyparser = require("body-parser");
 const mongoose = require("mongoose");
+require('dotenv').config()
 
 const app = express();
 
@@ -11,7 +12,7 @@ app.use(bodyparser.urlencoded({
 }));
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost:27017/PortfolioV1", {
+mongoose.connect(`mongodb+srv://deepak:${process.env.PASS}@portfoliov1.i64tn.mongodb.net/portfolioV1?retryWrites=true&w=majority`, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
@@ -171,8 +172,10 @@ app.get("/dashboard", function (req, res) {
             res.render("pagenotfound");
         }
     })
+})
 
-
+app.get("/notfound", function(req, res){
+    res.render("pagenotfound");
 })
 
 app.post("/contact", function (req, res) {

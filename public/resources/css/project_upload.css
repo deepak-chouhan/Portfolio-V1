@@ -1,0 +1,420 @@
+/* --------------------------------------------------------------- */
+/* Basic Setup */
+/* --------------------------------------------------------------- */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #fff;
+    --navy: #0A192F;
+    --navyl: #112240;
+    --light: #fcfcfc;
+    --grey: #878a8f;
+    --neon: #00d1ff;
+    --navytransp: rgba(10, 25, 47, 0.95);
+    --trans1: cubic-bezier(0.645, 0.045, 0.355, 1);
+    --navbg: #ffffffab;
+}
+
+
+
+@font-face {
+    font-family: Calibre;
+    src: url("/resources/css/fonts/Calibre-Bold.woff2");
+}
+
+element.style {
+    display: block;
+}
+
+html,
+body {
+    background-color: var(--bg);
+    color: var(--navy);
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.5;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+
+}
+
+.mainbody {
+    margin: 0 5px;
+    padding: 0px;
+}
+
+/* --------------------------------------------------------------- */
+/* Paragraph */
+/* --------------------------------------------------------------- */
+h1 {
+    font-size: 400%;
+    font-weight: 900;
+    font-family: Calibre;
+    margin: 0;
+}
+
+h2 {
+    font-size: 200%;
+}
+
+/* --------------------------------------------------------------- */
+/* Reusable */
+/* --------------------------------------------------------------- */
+
+section {
+    padding: 80px 0;
+}
+
+.row {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+/* --------------------------------------------------------------- */
+/* Social bar */
+/* --------------------------------------------------------------- */
+.Social_bar {
+    position: fixed;
+    left: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+
+}
+
+.Social_bar li:hover svg {
+    color: var(--neon);
+}
+
+.list_ul {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+.Social_bar .list_ul::after {
+    content: "";
+    margin: 50px auto;
+    display: block;
+    width: 1.5px;
+    height: 50px;
+    background-color: var(--navyl);
+}
+
+.Social_bar .list_ul::before {
+    content: "";
+    margin: 50px auto;
+    display: block;
+    width: 1.5px;
+    height: 50px;
+    background-color: var(--navyl);
+}
+
+.list_ul li {
+    padding: 15px 0;
+    transition: all 0.25s var(--trans1);
+}
+
+.list_ul li:hover {
+    transform: translate(0px, -5px);
+}
+
+.socialbar_icon {
+    width: 20px;
+    height: auto;
+    color: var(--navyl);
+}
+
+.navSocial_bar {
+    margin-top: 70px;
+}
+
+.navSocial_bar .list_ul {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+.navSocial_bar .list_ul li {
+    margin: 0;
+    padding: 15px 0;
+}
+
+
+.navSocial_bar .list_ul::after {
+    content: "";
+    width: 1.5px;
+    height: 30px;
+    margin-top: 10px;
+    background-color: var(--light);
+}
+
+.navSocial_bar .socialbar_icon {
+    color: var(--light);
+}
+
+.navSocial_bar ul li:hover svg {
+    color: var(--neon);
+}
+
+/* --------------------------------------------------------------- */
+/* Navbar */
+/* --------------------------------------------------------------- */
+
+header {
+    height: 100vh;
+}
+
+nav {
+    overflow: hidden;
+    font-size: 80%;
+    font-weight: 400;
+    width: 100vw;
+    position: fixed;
+    background-color: var(--navbg);
+    z-index: 4;
+    transition: all 0.3s var(--trans1);
+}
+
+#mobilenavbar {
+    position: fixed;
+    padding: 0px;
+    top: 0;
+    right: 0;
+    z-index: 5;
+    width: 0px;
+    height: 100vh;
+    background-color: var(--navytransp);
+    backdrop-filter: blur(10px);
+    transition: all 0.1s;
+}
+
+.mobilenavbar-ul {
+    text-align: center;
+    margin: 50px;
+}
+
+.mobilenavbar-ul li {
+    margin-top: 50px;
+    font-size: 100%;
+    list-style: none;
+}
+
+.mobilenavbar-ul li a {
+    font-size: 100%;
+    color: var(--light);
+    text-decoration: none;
+    transition: all 0.1s var(--trans1);
+}
+
+#mobilenavbar ul li:hover a {
+    color: var(--neon);
+}
+
+#mobilenavicon {
+    position: fixed;
+    top: 25px;
+    right: 30px;
+    z-index: 9;
+    cursor: pointer;
+}
+
+#mobilenavicon svg {
+    fill: var(--navyl);
+    transition: all 0.1s var(--trans1);
+}
+
+#mobilenavicon:hover svg {
+    fill: var(--neon);
+}
+
+#navblur {
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+    display: block;
+    position: fixed;
+    z-index: 4;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    transition: all 0.3s var(--trans1);
+    opacity: 0;
+    pointer-events: none;
+}
+
+#desktopnav {
+    overflow: hidden;
+    padding: 10px 0;
+    backdrop-filter: blur(10px);
+}
+
+.email {
+    margin: auto;
+    float: left;
+    margin-left: 3%;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.email div {
+    vertical-align: middle;
+}
+
+.blob {
+    background-image: url("../img/Blob.svg");
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    overflow: hidden;
+}
+
+.link {
+    display: inline-block;
+}
+
+#Email_icon {
+    fill: var(--light);
+}
+
+.blob img {
+    margin-top: 50%;
+    margin-left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.email div a {
+    text-decoration: none;
+    margin-left: 15px;
+    color: var(--navy);
+}
+
+
+.nav-links {
+    float: right;
+    margin-top: 16px;
+    margin-right: 3%;
+
+}
+
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    margin-left: 50px;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    color: var(--navy);
+}
+
+.nav-links li:nth-of-type(1) {
+    margin-left: 0;
+}
+
+.email:hover a {
+    color: var(--neon);
+}
+
+.nav-links li:hover a {
+    color: var(--neon);
+}
+
+
+/* Sticky Nav */
+
+
+
+
+/* ------------ */
+/* --------------------------------------------------------------- */
+/* Intro */
+/* --------------------------------------------------------------- */
+.intro {
+    text-align: left;
+    color: var(--navyl);
+}
+
+.intro .row{
+    margin: 20px 0;
+    width: 50%;
+}
+
+.intro h1 {
+    line-height: 1;
+}
+
+.intro p {
+    width: 90vw;
+    margin: 10px 0;
+    font-weight: 400;
+}
+
+.intro a{
+    border: 1px solid var(--navyl);
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 80%;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+textarea{
+    overflow: auto;
+    font-weight: 300;
+}
+
+input, select, textarea{
+    padding: 10px;
+    width: 100%;
+    margin: 5px 0;
+    display: block;
+}
+
+input::placeholder{
+    font-size: 100%;
+    font-weight: 300;
+}
+select{
+    font-size: 80%;
+    font-weight: 300;
+    background-color: var(--navyl);
+    color: var(--light);
+    padding: 10px;
+}
+
+
+input[type="submit"]{
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 35px;
+    background-color: var(--navyl);
+    border: 1px solid var(--navyl);
+    margin-right: 15px;
+    border-radius: 5px;
+    color: var(--light);
+    font-weight: 300;
+    cursor: pointer;
+    font-size: 90%;
+}
+input[type="submit"]:hover{
+    background-color: var(--navy);
+    color: var(--neon);
+    transition: all 0.2s var(--trans1);
+}
+
+*:focus{outline: none;}
+

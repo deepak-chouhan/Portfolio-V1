@@ -5,83 +5,162 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/resources/css/project_upload.css">
     <title>Document</title>
-    <style>
-        input {
-            display: block;
-            margin: 5px 0;
-        }
-
-        a {
-            display: inline-block;
-            border: 2px solid grey;
-            padding: 3px;
-            margin-top: 10px;
-        }
-    </style>
 </head>
 
 <body>
 
-    <form accept="/" action="/uploadproject" method="POST" class="contact-form">
-        <div class="row">
-            <p>Project Type</p>
-            <select name="project_type" id="">
-                <option value="programmingandwebdev">programmingandwebdev</option>
-                <option value="modelling">modelling</option>
-                <option value="uxui">uxui</option>
-                <option value="gamedev">gamedev</option>
-                <option value="programmingandwebdev_personal">programmingandwebdev_personal</option>
-                <option value="modelling_personal">modelling_personal</option>
-                <option value="uxui_personal">uxui_personal</option>
-            </select>
-        </div>
-        <div class="row">
-            <p>Project title</p>
-            <input placeholder="Project title" type="text" name="project_title" id="" autocomplete="off">
-        </div>
-        <div class="row">
-            <p>Year</p>
-            <input placeholder="Project Year" type="number" name="project_year" id="">
-        </div>
-        <div class="row">
-            <p>Project Link</p>
-            <input placeholder="Project link" type="text" name="project_link" id="" autocomplete="off">
-        </div>
-        <div class="row">
-            <p>Project description</p>
-            <textarea placeholder="Write your message here" name="project_description" id="" cols="50"
-                rows="10"></textarea>
-        </div>
-        <div class="row">
-            <p>Images cover</p>
-            <div>
-                <input placeholder="Image cover" type="text" name="image_cover" id="" autocomplete="off">
-            </div>
-        </div>
-        <div class="row">
-            <p>Images link</p>
-            <div id="Image_field">
-                <input placeholder="Image link" type="text" name="image_link" id="" autocomplete="off">
-            </div>
+    <header>
+        <nav id="js-nav">
+            <div id="mobilenav">
+                <div id="mobilenavicon">
+                    <svg id="menu_icon" class="mobilenavsvg" xmlns="http://www.w3.org/2000/svg" width="25" height="17"
+                        viewbox="0 0 25 17" fill="currentColor">
+                        <rect id="mob-3" width="25" height="3" transform="translate(0 14)" />
+                        <rect id="mob-2" width="25" height="3" transform="translate(0 7)" />
+                        <rect id="mob-1" width="25" height="3" />
+                    </svg>
+                </div>
 
-            <a id="add_images">Add image</a>
-        </div>
-        <div class="row">
-            <p>Tools</p>
-            <div id="Tools_field">
-                <input placeholder="Tools" type="text" name="tools" id="" autocomplete="off">
-            </div>
+                <div id="navblur">
+                </div>
+                <section id="mobilenavbar">
+                    <ul class="mobilenavbar-ul">
+                        <li><a href="/">Home</a></li>
+                        <li><a class="work-link" href="/">Work</a></li>
+                        <li><a class="contact-link" href="/contact">Contact</a></li>
+                        <li><a href="#">Resume</a></li>
+                    </ul>
+                    <div class="navSocial_bar">
+                        <ul class="list_ul">
+                            <li>
+                                <a href="https://github.com/deepak-chouhan" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" role="img" viewbox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="socialbar_icon">
+                                        <path
+                                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                        </path>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/dcdeepakdc/" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="socialbar_icon">
+                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/deepak-chouhan-a396591b3/" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" role="img" viewbox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="socialbar_icon">
+                                        <path
+                                            d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                        </path>
+                                        <rect x="2" y="9" width="4" height="12"></rect>
+                                        <circle cx="4" cy="4" r="2"></circle>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://dribbble.com/dcdeepakdc" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20"
+                                        fill="none" stroke="currentColor" stroke-width="1.5" class="socialbar_icon">
+                                        <circle cx="10" cy="10" r="10" stroke="none" />
+                                        <circle cx="10" cy="10" r="9.25" fill="none" />
+                                        <path d="M-3732.989,397.276s6.708,5.286,7.928,16.961"
+                                            transform="translate(3739.212 -395.667)" />
+                                        <path d="M-3732.666,397.667s6.541,3.529,5.495,15.634"
+                                            transform="translate(414.301 3736.148) rotate(90)" />
+                                        <path d="M-3733.611,397.911s8.791,3.384,6.439,15.389"
+                                            transform="translate(-393.667 -3716.576) rotate(-90)" />
+                                    </svg>
 
-            <a id="add_tools">Add tools</a>
-        </div>
-        <div class="row">
-            <br>
-            <br>
-            <br>
-            <input type="submit">
-        </div>
-    </form>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+            </div>
+        </nav>
+        <section>
+            <div class="row">
+                <h1>Create project</h1>
+            </div>
+            <div class="row intro">
+                <div class="upload-form">
+                    <form accept="/" action="/uploadproject" method="POST" class="contact-form">
+                        <div class="row">
+                            <p>Project Type</p>
+                            <select name="project_type" id="">
+                                <option value="programmingandwebdev">programmingandwebdev</option>
+                                <option value="modelling">modelling</option>
+                                <option value="uxui">uxui</option>
+                                <option value="gamedev">gamedev</option>
+                                <option value="programmingandwebdev_personal">programmingandwebdev_personal</option>
+                                <option value="modelling_personal">modelling_personal</option>
+                                <option value="uxui_personal">uxui_personal</option>
+                            </select>
+                        </div>
+                        <div class="row">
+                            <p>Project title</p>
+                            <input placeholder="Project title" type="text" name="project_title" id=""
+                                autocomplete="off">
+                        </div>
+                        <div class="row">
+                            <p>Year</p>
+                            <input placeholder="Project Year" type="number" name="project_year" id="">
+                        </div>
+                        <div class="row">
+                            <p>Project Link</p>
+                            <input placeholder="Project link" type="text" name="project_link" id="" autocomplete="off">
+                        </div>
+                        <div class="row">
+                            <p>Project description</p>
+                            <textarea placeholder="Write your message here" name="project_description" id="" cols="50"
+                                rows="10"></textarea>
+                        </div>
+                        <div class="row">
+                            <p>Images cover</p>
+                            <div>
+                                <input placeholder="Image cover" type="text" name="image_cover" id=""
+                                    autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p>Images link</p>
+                            <div id="Image_field">
+                                <input placeholder="Image link" type="text" name="image_link" id="" autocomplete="off">
+                            </div>
+
+                            <a id="add_images">Add image</a>
+                        </div>
+                        <div class="row">
+                            <p>Tools</p>
+                            <div id="Tools_field">
+                                <input placeholder="Tools" type="text" name="tools" id="" autocomplete="off">
+                            </div>
+
+                            <a id="add_tools">Add tools</a>
+                        </div>
+                        <div class="row">
+                            <br>
+                            <input type="submit">
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </section>
+    </header>
 
     <script>
         var image_field = document.getElementById("Image_field");
@@ -105,6 +184,10 @@
             tools_field.appendChild(newField);
         }
     </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="vendors/js/jquery.waypoints.min.js"></script>
+    <script src="resources/js/script.js"></script>
 
 </body>
 

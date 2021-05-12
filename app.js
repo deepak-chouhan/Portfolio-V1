@@ -59,7 +59,6 @@ app.get("/projects/:projecttype", function (req, res) {
             type: "programmingandwebdev"
         }, function (err, foundprojects) {
             if (foundprojects.length == 0) {
-                console.log("No items found")
                 res.redirect("/")
             } else {
 
@@ -73,10 +72,8 @@ app.get("/projects/:projecttype", function (req, res) {
             type: "programmingandwebdev_personal"
         }, function (err, foundprojects) {
             if (foundprojects.length == 0) {
-                console.log("No items found")
                 res.redirect("/")
             } else {
-
                 res.render("programming", {
                     Projects: foundprojects
                 })
@@ -86,32 +83,36 @@ app.get("/projects/:projecttype", function (req, res) {
         PROJECT.find({
             type: projecttype
         }, function (err, foundprojects) {
-            if (foundprojects.length == 0) {
-                console.log("No items found");
-                res.redirect("/")
-            } else {
-                if (projecttype === "modelling_personal" || projecttype === "modelling")
-                    res.render("projects", {
-                        title: "3D Modelling and animation",
-                        paragraph: "All of my 3D Modelling and Animation project are displayed here",
-                        Projects: foundprojects
-                    })
-                else if (projecttype === "uxui" || projecttype === "uxui_personal")
-                    res.render("projects", {
-                        title: "UX/UI Design",
-                        paragraph: "All of my UX/UI design project are displayed here",
-                        Projects: foundprojects
-                    })
-                else if (projecttype === "gamedev")
-                    res.render("projects", {
-                        title: "Game Development",
-                        paragraph: "All of my Game development project are displayed here",
-                        Projects: foundprojects
-                    })
+            if (!err) {
+                if (foundprojects.length == 0) {
+                    console.log("No items found");
+                    res.redirect("/")
+                } else {
+                    if (projecttype === "modelling_personal" || projecttype === "modelling")
+                        res.render("projects", {
+                            title: "3D Modelling and animation",
+                            paragraph: "All of my 3D Modelling and Animation project are displayed here",
+                            Projects: foundprojects
+                        })
+                    else if (projecttype === "uxui" || projecttype === "uxui_personal")
+                        res.render("projects", {
+                            title: "UX/UI Design",
+                            paragraph: "All of my UX/UI design project are displayed here",
+                            Projects: foundprojects
+                        })
+                    else if (projecttype === "gamedev")
+                        res.render("projects", {
+                            title: "Game Development",
+                            paragraph: "All of my Game development project are displayed here",
+                            Projects: foundprojects
+                        })
+                }
+            }
+            else{
+                res.render("pagenotfound");
             }
         })
     }
-
 })
 
 app.get("/details/:projectid", function (req, res) {
@@ -123,10 +124,14 @@ app.get("/details/:projectid", function (req, res) {
         _id: requestedproject
     }, function (err, foundprojects) {
 
-        if (foundprojects) {
-            res.render("projectDetails", {
-                Project: foundprojects
-            })
+        if (!err) {
+            if (foundprojects) {
+                res.render("projectDetails", {
+                    Project: foundprojects
+                })
+            }
+        } else {
+            res.render("pagenotfound");
         }
 
     })
@@ -142,37 +147,37 @@ app.get("/contact", function (req, res) {
 
 app.get("/clients", function (req, res) {
 
-    CLIENT.find({}, function(err, foundClients){
-        if(!err && foundClients.length >= 0){
+    CLIENT.find({}, function (err, foundClients) {
+        if (!err && foundClients.length >= 0) {
 
             res.render("clients", {
                 clients: foundClients
             })
-
+        } else {
+            res.render("pagenotfound");
         }
     })
 
 })
 
-app.get("/dashboard", function(req, res){
+app.get("/dashboard", function (req, res) {
 
-    CLIENT.find({}, function(err, foundClients){
-        if(!err){
-            res.render("dashboard",{
+    CLIENT.find({}, function (err, foundClients) {
+        if (!err) {
+            res.render("dashboard", {
                 clients: foundClients
             });
+        } else {
+            res.render("pagenotfound");
         }
     })
 
-    
+
 })
-
-
 
 app.post("/contact", function (req, res) {
 
     var date = new Date();
-
 
     const client = req.body;
 
@@ -204,8 +209,6 @@ app.post("/uploadproject", function (req, res) {
     newproject.save();
     res.redirect("/uploadproject")
 })
-
-
 
 app.listen(3000, function () {
     console.log("Server started on port 3000")

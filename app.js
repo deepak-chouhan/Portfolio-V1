@@ -169,7 +169,7 @@ app.get("/dashboard", function (req, res) {
                 clients: foundClients
             });
         } else {
-            res.render("pagenotfound");
+            res.render("dashboard");
         }
     })
 })

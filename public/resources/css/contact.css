@@ -491,18 +491,6 @@ footer span {
 }
 
 /* --------------------------------------------------------------- */
-/* Animation */
-/* --------------------------------------------------------------- */
-.js--wp-2,
-.js--wp-3,
-.js--wp-4,
-.js--wp-5,
-.js--wp-6 {
-    opacity: 0;
-}
-
-
-/* --------------------------------------------------------------- */
 /* Queries */
 /* --------------------------------------------------------------- */
 
@@ -532,10 +520,10 @@ footer span {
         width: 90vw;
         margin: 10px 0;
     }
-    .project img {
-        width: 100%;
-        margin: 10px 0;
+    .wrapper{
+        grid-template-columns: 50%;
     }
+    
 }
 
 /* small phones to small tablets: from 481 to 767px */
@@ -567,12 +555,7 @@ footer span {
         margin: 10px 0;
     }
 
-    .project img {
-        width: 100%;
-        margin: 10px 0;
-    }
-
-    .projects {
+    .wrapper{
         grid-template-columns: 1fr;
     }
 

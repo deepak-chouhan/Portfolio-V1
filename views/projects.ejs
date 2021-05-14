@@ -4,6 +4,17 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="resources/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="resources/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="resources/favicons/favicon-16x16.png">
+  <link rel="manifest" href="resources/favicons/site.webmanifest">
+  <link rel="mask-icon" href="resources/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="resources/favicons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="resources/favicons/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
   <link rel="stylesheet" href="/vendors/css/normalize.css">
   <link rel="stylesheet" type="text/css" href="/vendors/css/grid.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
@@ -180,7 +191,7 @@
     <section id="work" class="projects">
       <div class="row js--wp-3">
         <div class="wrapper">
-          <% Projects.forEach(function(project){ %> 
+          <% Projects.forEach(function(project){ %>
           <a class="project-card" href="/details/<%= project._id %>">
             <div class="image-zoom">
               <img src="<%= project.cover %>" alt="project_cover">
@@ -192,7 +203,7 @@
               <p>view more</p>
             </div>
           </a>
-          <% }) %> 
+          <% }) %>
 
         </div>
       </div>

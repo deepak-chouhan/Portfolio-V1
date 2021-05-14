@@ -4,6 +4,18 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="resources/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="resources/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="resources/favicons/favicon-16x16.png">
+    <link rel="manifest" href="resources/favicons/site.webmanifest">
+    <link rel="mask-icon" href="resources/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="resources/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="resources/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
     <link rel="stylesheet" href="/vendors/css/normalize.css">
     <link rel="stylesheet" type="text/css" href="/vendors/css/grid.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
@@ -195,7 +207,8 @@
                         <header>
                             <div class="project-head">
                                 <p><%= project.year %> </p>
-                                <p><svg class="link-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="12" viewBox="0 0 30 15">
+                                <p><svg class="link-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="12"
+                                        viewBox="0 0 30 15">
                                         <path id="md-link"
                                             d="M34.853,151.5a4.65,4.65,0,0,1,4.647-4.647h5.893V144H39.5a7.5,7.5,0,0,0,0,15h5.893v-2.853H39.5A4.65,4.65,0,0,1,34.853,151.5Zm5.719,1.473H53.429v-2.946H40.571ZM54.5,144H48.607v2.853H54.5a4.647,4.647,0,0,1,0,9.295H48.607V159H54.5a7.5,7.5,0,0,0,0-15Z"
                                             transform="translate(-32 -144)" fill="currentColor" />
@@ -211,11 +224,11 @@
                             <ul>
                                 <%project.tools.forEach(function(tool){%>
                                 <li><%= tool %></li>
-                            <%})%>
+                                <%})%>
                             </ul>
                         </footer>
                     </a>
-                <%})%>
+                    <%})%>
                 </div>
             </div>
         </section>

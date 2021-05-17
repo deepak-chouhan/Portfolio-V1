@@ -1,10 +1,12 @@
 # Portfolio-V1
 My Portfolio website Version 1
 
+You can check my website on [deepak chouhan](https://deepakchouhan.herokuapp.com/)
+
 I have devided my website's progress in different Phases. In Each Phases there will be new features and improvements added in my portfolio website.
 
 ## PHASE I
-> Landing page
+> Home page
   - Main section
   - About me section
   - what i do
@@ -17,4 +19,10 @@ I have devided my website's progress in different Phases. In Each Phases there w
   - One page to diplay design projects.
 
 > Contact page
-  - contact page to client to contact me
+  - contact page for client to contact me
+
+> Dashboard
+  - Page for me to see my clients and upload project.
+
+> Project upload page
+  - Page for me to upload my project

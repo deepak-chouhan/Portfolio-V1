@@ -3,7 +3,7 @@ My Portfolio website Version 1
 
 You can check my website on [deepak chouhan](https://deepakchouhan.herokuapp.com/)
 
-I have devided my website's progress in different Phases. In Each Phases there will be new features and improvements added in my portfolio website.
+I have divided my website's progress in different Phases. In Each Phases there will be new features and improvements added in my portfolio website.
 
 ## PHASE I
 > Home page

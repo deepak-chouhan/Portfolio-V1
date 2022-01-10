@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="resources/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="resources/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="resources/favicons/favicon-16x16.png">
+    <link rel="manifest" href="resources/favicons/site.webmanifest">
+    <link rel="mask-icon" href="resources/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="resources/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="resources/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="/vendors/css/normalize.css">
+    <link rel="stylesheet" href="/resources/css/blog.css">
+    <link rel="stylesheet" href="/resources/css/style.css">
+    <link rel="stylesheet" href="/resources/css/queries.css">
+</head>
+
+<body>
+
+    <!-- socialbar_icon Social bar -->
+    <!-- Whoever is inspecting this page to know how i made this floating bar, i want to let you know that this social bar in ispired from a different porfolio https://brittanychiang.com/ -->
+    <div class="Social_bar js--wp-1">
+        <ul class="list_ul">
+            <li>
+                <a href="https://github.com/deepak-chouhan" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" role="img" viewbox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="socialbar_icon">
+                        <path
+                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                        </path>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/dcdeepakdc/" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="socialbar_icon">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/deepak-chouhan-a396591b3/" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" role="img" viewbox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="socialbar_icon">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                        </path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://dribbble.com/dcdeepakdc" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20" fill="none"
+                        stroke="currentColor" stroke-width="1.5" class="socialbar_icon">
+                        <circle cx="10" cy="10" r="10" stroke="none" />
+                        <circle cx="10" cy="10" r="9.25" fill="none" />
+                        <path d="M-3732.989,397.276s6.708,5.286,7.928,16.961"
+                            transform="translate(3739.212 -395.667)" />
+                        <path d="M-3732.666,397.667s6.541,3.529,5.495,15.634"
+                            transform="translate(414.301 3736.148) rotate(90)" />
+                        <path d="M-3733.611,397.911s8.791,3.384,6.439,15.389"
+                            transform="translate(-393.667 -3716.576) rotate(-90)" />
+                    </svg>
+
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <nav id="js-nav">
+        <div id="desktopnav">
+            <div class="email">
+                <div class="blob">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewbox="0 0 50 50"
+                        fill="currentColor">
+                        <path id="Blob"
+                            d="M-46.689-76.785c4.163,1.867,7.286,6.337,8.565,11.143,1.249,4.775.625,9.857,0,15-.654,5.143-1.309,10.316-4.074,13.714-2.736,3.4-7.584,4.959-12.49,6.52-4.877,1.561-9.844,3.061-14.334,2.082-4.461-.98-8.476-4.439-11.955-8.418-3.45-4.01-6.394-8.571-6.424-13.163-.059-4.561,2.736-9.214,5.145-13.806,2.379-4.592,4.312-9.184,7.732-11.418,3.39-2.235,8.268-2.143,13.323-2.48C-56.146-77.918-50.882-78.652-46.689-76.785Z"
+                            transform="translate(87.403 78.014)" />
+                        <path id="Email_icon"
+                            d="M5.8,18A5.833,5.833,0,0,1,0,12.155V5.845A5.824,5.824,0,0,1,5.8,0h8.4A5.842,5.842,0,0,1,20,5.845V7.307a.71.71,0,0,1-.707.713L19.284,8a.705.705,0,0,1-.5-.209.716.716,0,0,1-.207-.5V5.845A4.439,4.439,0,0,0,14.2,1.435H5.8A4.44,4.44,0,0,0,1.424,5.845v6.309A4.44,4.44,0,0,0,5.8,16.565h8.4a4.439,4.439,0,0,0,4.379-4.411.716.716,0,0,1,1.424,0A5.842,5.842,0,0,1,14.2,18ZM8.05,9.98,3.928,6.656a.725.725,0,0,1-.106-1.007.7.7,0,0,1,.991-.107L8.969,8.858a1.425,1.425,0,0,0,1.769,0l4.113-3.316h.009a.711.711,0,1,1,.885,1.114L11.632,9.98a2.84,2.84,0,0,1-3.582,0Z"
+                            transform="translate(15 16)" />
+                    </svg>
+                </div>
+                <div class="link">
+                    <a>deepak16chouhan@gmail.com</a>
+                </div>
+            </div>
+        </div>
+        <div id="mobilenav">
+            <div id="mobilenavicon">
+                <svg id="menu_icon" class="mobilenavsvg" xmlns="http://www.w3.org/2000/svg" width="25" height="17"
+                    viewbox="0 0 25 17" fill="currentColor">
+                    <rect id="mob-3" width="25" height="3" transform="translate(0 14)" />
+                    <rect id="mob-2" width="25" height="3" transform="translate(0 7)" />
+                    <rect id="mob-1" width="25" height="3" />
+                </svg>
+            </div>
+
+            <div id="navblur">
+            </div>
+            <section id="mobilenavbar">
+                <ul class="mobilenavbar-ul">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a class="work-link" href="#work">Work</a></li>
+                    <li><a class="contact-link" href="#contact">Contact</a></li>
+                    <li><a href="#">Resume</a></li>
+                </ul>
+                <div class="navSocial_bar">
+                    <ul class="list_ul">
+                        <li>
+                            <a href="https://github.com/deepak-chouhan" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" role="img" viewbox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="socialbar_icon">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                    </path>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/dcdeepakdc/" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="socialbar_icon">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/deepak-chouhan-a396591b3/" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" role="img" viewbox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="socialbar_icon">
+                                    <path
+                                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                    </path>
+                                    <rect x="2" y="9" width="4" height="12"></rect>
+                                    <circle cx="4" cy="4" r="2"></circle>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://dribbble.com/dcdeepakdc" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 20 20"
+                                    fill="none" stroke="currentColor" stroke-width="1.5" class="socialbar_icon">
+                                    <circle cx="10" cy="10" r="10" stroke="none" />
+                                    <circle cx="10" cy="10" r="9.25" fill="none" />
+                                    <path d="M-3732.989,397.276s6.708,5.286,7.928,16.961"
+                                        transform="translate(3739.212 -395.667)" />
+                                    <path d="M-3732.666,397.667s6.541,3.529,5.495,15.634"
+                                        transform="translate(414.301 3736.148) rotate(90)" />
+                                    <path d="M-3733.611,397.911s8.791,3.384,6.439,15.389"
+                                        transform="translate(-393.667 -3716.576) rotate(-90)" />
+                                </svg>
+
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+        </div>
+    </nav>
+
+    <section class="head">
+        <div class="date">
+            <p>Tue Nov 02 2021</p>
+        </div>
+        <div class="heading">
+            <h1>Website to develope communication skill</h1>
+        </div>
+        <div class="labels">
+            <div>Node.JS</div>
+            <div>Express.JS</div>
+            <div>MongoDB</div>
+            <div>Node.JS</div>
+            <div>Express.JS</div>
+            <div>MongoDB</div>
+        </div>
+    </section>
+
+    <section class="mid">
+        <div class="cover">
+            <img src="https://miro.medium.com/max/2000/1*lk_M1x0p8oAoAJLM0gO1rg.png" alt="cover">
+        </div>
+    </section>
+
+    <section class="bottom">
+        <p></p>
+        <p>It is quite known to everyone that LinkedIn is a social media platform that plays an important role in
+            students’ lives (especially college students). But it is somewhat different from other social networking
+            sites because it’s designed specifically for professional networking like finding a job, discovering sales
+            leads, connecting with potential business partners, and also it helps to know many other crucial insights
+            such as trending technologies, the latest job opportunities, etc.</p>
+        <p><img src="https://media.geeksforgeeks.org/wp-content/uploads/20201109225314/7BestPracticestoBuildaBetterLinkedInProfile.png"
+                alt="7 Best Practices to Build a Better LinkedIn Profile"
+                srcset="https://media.geeksforgeeks.org/wp-content/uploads/20201109225314/7BestPracticestoBuildaBetterLinkedInProfile-660x323.png 660w, https://media.geeksforgeeks.org/wp-content/uploads/20201109225314/7BestPracticestoBuildaBetterLinkedInProfile-768x376.png 768w, https://media.geeksforgeeks.org/wp-content/uploads/20201109225314/7BestPracticestoBuildaBetterLinkedInProfile.png,"
+                sizes="100vw" width="1000"></p>
+        <p>LinkedIn is a place where one can get independent validation through recommendations/endorsements. Also, it’s
+            a great way to cultivate and manage a professional network.</p>
+        <p>And with a similar context, let’s take a look at several best practices to build a better LinkedIn profile:
+        </p>
+        <h3>1. Make Your First expression with a Professional Photo</h3>
+        <p>A Professional Profile photo can be considered as a must for a LinkedIn Profile! Research shows that LinkedIn
+            profiles with pictures are 7x more likely to be viewed by potential connections than those with no picture
+            because somehow pictures attract a human more. The photo can help you to signify the credibility of the rest
+            of your profile. You must look professional in your photo and can use several most-preferred tactics such as
+            up to close photo, a decent smile, a light background, etc.&nbsp;</p>
+        <h3>2. Your Headline Should Represent Your Complete Identity &nbsp;</h3>
+        <p>A detailed LinkedIn headline motivates your audience to keep reading the rest of your profile. It plays a
+            major role in your profile building. It also makes it easier for your connections or audience to find you.
+        </p>
+        <blockquote>
+            <p><i>Vanshika Student</i></p>
+            <p><i>Studies at MIT ADT University</i></p>
+            <p><i>(really a B.tech student)</i></p>
+            <p><i>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp;&nbsp;<strong>VS</strong></i></p>
+            <p><i>Vanshika Student</i></p>
+            <p><i>B.tech IT Engineering | MIT ADT University | Aspiring Data Scientist | New Product Design | Looking
+                    for opportunities</i></p>
+        </blockquote>
+        <p><br><br>&nbsp;</p>
+        <p>In the above example, you can see the difference between a short or confusing headline and a headline that
+            used keywords that effectively identify one’s expertise, focus, and experience.&nbsp;</p>
+        <h3>3. A Compelling Summary</h3>
+        <p>A summary is like a virtual handshake and personal introduction. You need to use the same genuine,
+            conversational voice that you would use if you were meeting someone over coffee i.e., personal and
+            descriptive. You need to tell your reader what you do…and maybe a little bit of why.</p>
+        <p>Do not sell yourself- Just tell!</p>
+        <ul>
+            <li><strong>First Paragraph</strong> – A short summary that includes what you are looking for and how to
+                contact you, For example:-</li>
+        </ul>
+        <blockquote>
+            <p><i>&nbsp;“I am a third-year IT engineering student at MIT ADT University, Pune seeking a summer 2020
+                    internship. Please contact me at abcstudent@gmail.com or 904-798-0305”.</i></p>
+        </blockquote>
+        <ul>
+            <li><strong>Second Paragraph</strong> – You can provide more details about you. You can start with the
+                background of what you do and why you are passionate about what you are studying (without saying “I’m
+                passionate”). &nbsp;You can share a story about your “YAY!” moment to immediately grab their attention.
+            </li>
+            <li><strong>Third Paragraph</strong> – Here you can share about your experiences like your industry
+                experience, more about your internship experience, you can also share about the projects you have worked
+                on and currently working on or the problem you are trying to solve. These all will create a good impact
+                on your audience.</li>
+            <li><strong>Fourth Paragraph </strong>– “Crowning achievements” – You can tell about your co-curricular
+                involvement inside your college campus or any other community and if you are a student partner or part
+                of a community such as Campus Mantri Programme, etc. Also, you can mention your leadership, teamwork,
+                interpersonal, and communication skills.</li>
+            <li><strong>Fifth Paragraph </strong>– Fifth Paragraph is optional, if there is room at the bottom, you can
+                create a list of keywords relevant to your field of study/industry.</li>
+        </ul>
+        <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Keyword | keyword | keyword | keyword</p>
+        <h3>4. Remember Your Profile Priorities</h3>
+        <p>The first line should tell your reader who you are, what you want, and how they can contact you. After that,
+            make sure your summary is more of a story that answers, “Tell me about yourself?” “Why do you do what you
+            do?” and “Why do you love it?” Tell me about your “Aha!” moment. &nbsp;Remember to describe the
+            accomplishments you are most proud of. Also, include relevant work and projects that describe your hands-on
+            experience and make them know you can do the work.</p>
+        <h3>5. Highlight Your Resume</h3>
+        <p>Most of the visitors can’t spend the time reading your full profile. Once they get attracted by your resume,
+            they might want to download your resume before returning to read more of your profile. Hence, you need to
+            highlight your resume to make it easier for them to find it. &nbsp;</p>
+        <h3>6. Other sections to Consider</h3>
+        <p>Many of these categories you should have already covered much higher in your profile, but because every
+            reader chooses a different place to start, sometimes repetition is good!</p>
+        <ul>
+            <li>Skills (You can also give the skill quiz and you will get a badge for your skill)</li>
+            <li>Organizations</li>
+            <li>Honors and Awards</li>
+            <li>Test Scores</li>
+            <li>Publications</li>
+        </ul>
+        <h3>7. Be Yourself</h3>
+        <p>Last but not least, you need to be authentic with all the information you would enter in your LinkedIn
+            profile. You’re not expected to mention any fake or irrelevant details as it may get you blacklisted from
+            various career opportunities.&nbsp;</p>
+        <p></p>
+
+    </section>
+
+    <footer>
+        <p>Designed and developed with <span>&#x2764</span> by Deepak chouhan</p>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/vendors/js/jquery.waypoints.min.js"></script>
+    <script src="/resources/js/script.js"></script>
+
+</body>
+
+</html>

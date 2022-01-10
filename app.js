@@ -17,8 +17,6 @@ mongoose.connect(`mongodb+srv://deepak:${process.env.PASS}@portfoliov1.i64tn.mon
     useUnifiedTopology: true
 });
 
-
-
 const projectSchema = {
     type: String,
     title: String,
@@ -161,6 +159,10 @@ app.get("/clients", function (req, res) {
 
 })
 
+app.get("/blog", (req, res) => {
+    res.render("blog")
+})
+
 app.get("/dashboard", function (req, res) {
 
     CLIENT.find({}, function (err, foundClients) {
@@ -177,6 +179,7 @@ app.get("/dashboard", function (req, res) {
 app.get("/notfound", function(req, res){
     res.render("pagenotfound");
 })
+
 
 app.post("/contact", function (req, res) {
 

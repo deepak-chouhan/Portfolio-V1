@@ -63,18 +63,22 @@ h2 {
     font-size: 200%;
 }
 
+p{
+    font-size: 75%;
+}
+
 /* --------------------------------------------------------------- */
 /* Reusable */
 /* --------------------------------------------------------------- */
 
 section {
-    padding: 80px 0;
+    padding: 80px;
 }
 
-.row {
+/* .row {
     max-width: 1140px;
     margin: 0 auto;
-}
+} */
 
 /* --------------------------------------------------------------- */
 /* Social bar */
@@ -348,9 +352,14 @@ nav {
     color: var(--navyl);
 }
 
-.intro .row{
+.intro form .container {
+    display: grid;
+    gap: 50px;
+    grid-template-columns: 30% 70%;
+}
+
+.intro .row {
     margin: 20px 0;
-    width: 50%;
 }
 
 .intro h1 {
@@ -358,37 +367,39 @@ nav {
 }
 
 .intro p {
-    width: 90vw;
     margin: 10px 0;
     font-weight: 400;
 }
 
-.intro a{
+.intro a {
     border: 1px solid var(--navyl);
     border-radius: 5px;
-    padding: 10px;
-    font-size: 80%;
+    padding: 5px 10px;
+    font-size: 75%;
     margin-top: 10px;
     display: inline-block;
 }
 
-textarea{
-    overflow: auto;
+textarea {
     font-weight: 300;
 }
 
-input, select, textarea{
-    padding: 10px;
+input,
+select,
+textarea {
     width: 100%;
+    padding: 10px;
     margin: 5px 0;
     display: block;
+    font-size: 70%;
 }
 
-input::placeholder{
+input::placeholder {
     font-size: 100%;
     font-weight: 300;
 }
-select{
+
+select {
     font-size: 80%;
     font-weight: 300;
     background-color: var(--navyl);
@@ -397,7 +408,8 @@ select{
 }
 
 
-input[type="submit"]{
+input[type="submit"] {
+    width: auto;
     display: inline-block;
     text-decoration: none;
     padding: 10px 35px;
@@ -408,13 +420,15 @@ input[type="submit"]{
     color: var(--light);
     font-weight: 300;
     cursor: pointer;
-    font-size: 90%;
+    font-size: 80%;
 }
-input[type="submit"]:hover{
+
+input[type="submit"]:hover {
     background-color: var(--navy);
     color: var(--neon);
     transition: all 0.2s var(--trans1);
 }
 
-*:focus{outline: none;}
-
+*:focus {
+    outline: none;
+}

@@ -106,8 +106,7 @@ app.get("/projects/:projecttype", function (req, res) {
                             Projects: foundprojects
                         })
                 }
-            }
-            else{
+            } else {
                 res.render("pagenotfound");
             }
         })
@@ -117,7 +116,6 @@ app.get("/projects/:projecttype", function (req, res) {
 app.get("/details/:projectid", function (req, res) {
 
     const requestedproject = req.params.projectid
-
 
     PROJECT.findOne({
         _id: requestedproject
@@ -176,7 +174,7 @@ app.get("/dashboard", function (req, res) {
     })
 })
 
-app.get("/notfound", function(req, res){
+app.get("/notfound", function (req, res) {
     res.render("pagenotfound");
 })
 
@@ -218,7 +216,7 @@ app.post("/uploadproject", function (req, res) {
 
 let port = process.env.PORT;
 if (port == null || port == "") {
-  port = 3000;
+    port = 3000;
 }
 app.listen(port, function () {
     console.log("Server started successfully")

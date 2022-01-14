@@ -83,13 +83,21 @@ router.get("/details/:projectid", function (req, res) {
 
     PROJECT.findOne({
         _id: requestedproject
-    }, function (err, foundprojects) {
+    }, function (err, foundproject) {
 
         if (!err) {
-            if (foundprojects) {
-                res.render("projectDetails", {
-                    Project: foundprojects
-                })
+            if (foundproject) {
+                console.log(foundproject.desc.length)
+                if(foundproject.desc != "empty"){
+                    res.render("projectDetails", {
+                        Project: foundproject
+                    })
+                }
+                else{
+                    res.render("blog", {
+                        Project: foundproject
+                    })
+                }
             }
         } else {
             res.render("pagenotfound");
@@ -162,15 +170,14 @@ router.post("/contact", function (req, res) {
 
 router.post("/uploadproject", function (req, res) {
     var newobject = req.body;
-    console.log(newobject);
+    // console.log(newobject);
     const newproject = new PROJECT({
         type: newobject.project_type,
         title: newobject.project_title,
         year: newobject.project_year,
         link: newobject.project_link,
-        desc: newobject.project_description,
+        body: newobject.blogbody,
         cover: newobject.image_cover,
-        images: newobject.image_link,
         tools: newobject.tools
     })
     newproject.save();

@@ -3,9 +3,10 @@ const mongoose = require("mongoose");
 const projectSchema = {
     type: String,
     title: String,
-    year: Number,
+    year: Date,
     link: String,
-    desc: String,
+    desc: {type: String, default: "empty"},
+    body: {type: String, default: "empty"},
     cover: String,
     images: [],
     tools: []

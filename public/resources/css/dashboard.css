@@ -405,7 +405,7 @@ nav {
 
 .wrapper {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: repeat(2, 1fr);
 
 }
 
@@ -417,7 +417,7 @@ nav {
 
 .clients-box {
     width: 100%;
-    height: 60vh;
+    height: max-content;
     overflow-y: scroll;
     padding-right: 20px;
     box-sizing: content-box;
@@ -440,6 +440,16 @@ nav {
 
 .client-info {
     margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.client-info .remove a{
+    color: var(--navyl);
+}
+
+.client-info .remove a:hover{
+    color: var(--neon);
 }
 
 .name-email {
@@ -471,8 +481,83 @@ nav {
     color: #3DD598;
 }
 
-.client:hover, .create-project:hover{
-    background-color: #dadae0d0;
+/* --------------------------------------------------------------- */
+/* Projects */
+/* --------------------------------------------------------------- */
+.projects .row:first-of-type{
+    margin-bottom: 50px;
+}
+
+.container {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+}
+
+
+.project-card {
+    text-decoration: none;
+    overflow: hidden;
+    max-width: 400px;
+    font-weight: 400;
+    color: var(--navy);
+    background-color: #ececf3;
+    position: relative;
+    padding: 40px;
+    display: flex;
+    gap: 60px;
+    flex-direction: column;
+    transition: all .2s ease;
+}
+
+.project-card:hover{
+    transform: scale(1.02);
+}
+
+.project-card .head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-card .head a{
+    color: var(--navyl);
+}
+
+.project-card .head a:hover{
+    color: var(--neon);
+}
+
+
+.project-card p{
+    font-size: 80%;
+}
+
+.project-card .info .desc{
+    font-size: 65%;
+}
+
+.project-card .info a{
+    font-size: 150%;
+    font-weight: 900;
+    font-family: Calibre;
+    color: var(--navyl);
+    text-decoration: none;
+}
+
+.project-card .labels{
+    margin-top: 10px;
+}
+
+.project-card .labels div{
+    margin: 5px 5px 5px 0px;
+    display: inline-block;
+    font-size: 65%;
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    background-color: #fcfcfc;
+    color: var(--navy);
 }
 
 
@@ -484,7 +569,7 @@ nav {
 /* small tablets to big tablets: from 768 to 1023px */
 @media only screen and (max-width: 1023px) {
     body {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     .Social_bar {
@@ -506,6 +591,10 @@ nav {
         margin: 10px 0;
     }
 
+    .container {
+        gap: 30px;
+    }
+
     .project img {
         width: 100%;
         margin: 10px 0;
@@ -520,7 +609,7 @@ nav {
 /* small phones to small tablets: from 481 to 767px */
 @media only screen and (max-width: 767px) {
     body {
-        font-size: 16px;
+        font-size: 20px;
     }
 
     .row {
@@ -544,6 +633,11 @@ nav {
         font-size: 90%;
         width: 90vw;
         margin: 10px 0;
+    }
+
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
 
     .project img {
@@ -580,7 +674,7 @@ nav {
     }
 
     body {
-        font-size: 16px;
+        font-size: 20px;
     }
 
     .row {
@@ -633,4 +727,10 @@ nav {
         width: 90vw;
         margin: 10px 0;
     }
+
+    .container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
 }

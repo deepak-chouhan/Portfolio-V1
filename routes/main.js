@@ -88,12 +88,11 @@ router.get("/details/:projectid", function (req, res) {
         if (!err) {
             if (foundproject) {
                 console.log(foundproject.desc.length)
-                if(foundproject.desc != "empty"){
+                if (foundproject.desc != "empty") {
                     res.render("projectDetails", {
                         Project: foundproject
                     })
-                }
-                else{
+                } else {
                     res.render("blog", {
                         Project: foundproject
                     })
@@ -129,6 +128,16 @@ router.get("/clients", function (req, res) {
 
 })
 
+router.get("/dashboard/client/remove/:clientId", (req, res) => {
+
+    CLIENT.findByIdAndDelete(req.params.clientId, (err) => {
+        if (!err) {
+            res.redirect("/dashboard");
+        }
+    })
+
+})
+
 router.get("/blog", (req, res) => {
     res.render("blog")
 })
@@ -136,14 +145,27 @@ router.get("/blog", (req, res) => {
 router.get("/dashboard", function (req, res) {
 
     CLIENT.find({}, function (err, foundClients) {
+        PROJECT.find({}, (err, foundProjects) => {
+            if (!err) {
+                res.render("dashboard", {
+                    clients: foundClients,
+                    projects: foundProjects
+                });
+            } else {
+                res.render("dashboard");
+            }
+        })
+    })
+})
+
+router.get("/dashboard/project/remove/:projectId", (req, res) => {
+
+    PROJECT.findByIdAndDelete(req.params.projectId, (err) => {
         if (!err) {
-            res.render("dashboard", {
-                clients: foundClients
-            });
-        } else {
-            res.render("dashboard");
+            res.redirect("/dashboard")
         }
     })
+
 })
 
 router.get("/notfound", function (req, res) {

@@ -156,6 +156,7 @@ router.get("/dashboard", function (req, res) {
             }
         })
     })
+    
 })
 
 router.get("/dashboard/project/remove/:projectId", (req, res) => {

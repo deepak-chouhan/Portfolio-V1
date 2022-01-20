@@ -189,7 +189,7 @@
                             <h2>Clients</h2>
                         </div>
                         <div class="clients-box">
-                            <a href="">
+                            <div>
                                 <% clients.forEach(function(client){ %>
                                 <div class="client">
                                     <div class="client-info">
@@ -197,18 +197,68 @@
                                             <h2><%= client.name %></h2>
                                             <p><%= client.email %></p>
                                         </div>
+                                        <div class="remove">
+                                            <a href="/dashboard/client/remove/<%= client._id %>">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x"
+                                                    width="25" height="25" viewbox="0 0 24 24" stroke-width="1.5"
+                                                    stroke="currentColor" fill="none" stroke-linecap="round"
+                                                    stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                    <line x1="18" y1="6" x2="6" y2="18" />
+                                                    <line x1="6" y1="6" x2="18" y2="18" />
+                                                </svg>
+                                            </a>
+                                        </div>
                                     </div>
                                     <div class="client-desc">
                                         <p><%= client.message %><span>...</span></p>
                                     </div>
                                     <div class="time">
-                                        <p><%= client.date %></p>
+                                        <p><%= client.date.toDateString() %></p>
                                     </div>
                                 </div>
                                 <% }) %>
-                            </a>
+                            </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects">
+            <div class="row">
+                <h2>Projects</h2>
+            </div>
+            <div class="row">
+                <div class="container">
+                    <% for(project of projects){ %>
+                    <div class="project-card">
+                        <div class="head">
+                            <p class="date"><%= project.year.toDateString()%></p>
+                            <div class="remove">
+                                <a href="/dashboard/project/remove/<%= project._id %>">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x"
+                                        width="25" height="25" viewbox="0 0 24 24" stroke-width="1.5"
+                                        stroke="currentColor" fill="none" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <line x1="18" y1="6" x2="6" y2="18" />
+                                        <line x1="6" y1="6" x2="18" y2="18" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <p class="desc"><%= project.type %> </p>
+                            <a href="/details/<%= project._id %> " class="title"><%= project.title %></a>
+                            <div class="labels">
+                                <% for(tool of project.tools){ %> 
+                                <div><%= tool %> </div>
+                                <% } %> 
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
                 </div>
             </div>
         </section>
